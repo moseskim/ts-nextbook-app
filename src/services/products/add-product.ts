@@ -3,16 +3,16 @@ import { fetcher } from 'utils'
 
 export type AddProductsParams = {
   /**
-   * 追加する商品
+   * 추가할 상품
    */
   product: Omit<Product, 'id'>
 }
 
 /**
- * プロダクトAPI（新規追加）
- * @param context APIコンテキスト
- * @param params 新規追加する商品
- * @returns 新規追加した商品
+ * 제품 API(신규 추가)
+ * @param context API 컨텍스트
+ * @param params 신규 추가할 상품
+ * @returns 신규 추가한 상품
  */
 const addProduct = async (
   context: ApiContext,

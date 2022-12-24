@@ -5,29 +5,29 @@ import Flex from 'components/layout/Flex'
 
 interface UserProfileProps {
   /**
-   * バリアント（表示スタイル）
+   * 변형(표지 스타일)
    */
   variant?: 'normal' | 'small'
   /**
-   * ユーザー名
+   * 사용자명
    */
   username: string
   /**
-   * ユーザー画像URL
+   * 사용자 이미지 URL
    */
   profileImageUrl: string
   /**
-   * ユーザーが所有する商品数
+   * 사용자가 소유한 상품 수
    */
   numberOfProducts: number
   /**
-   * ユーザーの説明
+   * 사용자 설명
    */
   description?: string
 }
 
 /**
- * ユーザープロファイル
+ * 사용자 프로파일
  */
 const UserProfile = ({
   variant = 'normal',
@@ -41,7 +41,7 @@ const UserProfile = ({
   return (
     <Flex>
       <Box minWidth={profileImageSize}>
-        {/* ユーザー画像 */}
+        {/* 사용자 이미지 */}
         <ShapeImage
           shape="circle"
           quality="85"
@@ -58,7 +58,7 @@ const UserProfile = ({
           justifyContent="space-between"
         >
           <Box>
-            {/* ユーザー名 */}
+            {/* 사용자명 */}
             <Text
               as="p"
               fontWeight="bold"
@@ -68,11 +68,11 @@ const UserProfile = ({
             >
               {username}
             </Text>
-            {/* 商品出店数 */}
+            {/* 상품 게시 수 */}
             <Text marginBottom={1} marginTop={0} as="p">
-              {numberOfProducts}点出品済
+              {numberOfProducts}개 제품 게시 완료
             </Text>
-            {/* ユーザー概要 */}
+            {/* 사용자 개요 */}
             {variant === 'normal' && (
               <Text margin={0} as="p">
                 {description}

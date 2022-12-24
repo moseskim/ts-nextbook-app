@@ -2,17 +2,17 @@ import Grid from 'components/layout/Grid'
 
 interface ProductCardListProps {
   /**
-   * 1行に表示する商品数
+   * 1행에 표시할 상품 수
    */
   numberPerRow?: number
   /**
-   * モバイルで1行に表示する商品数
+   * 모바일에서 1행에 표시할 상품 수
    */
   numberPerRowForMobile?: number
 }
 
 /**
- * 商品カードリスト
+ * 상품 카드 리스트
  */
 const ProductCardList = ({
   numberPerRow = 4,

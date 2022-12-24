@@ -52,7 +52,7 @@ export interface IconButtonProps {
 }
 
 /**
- * アイコンボタン
+ * 아이콘 버튼
  */
 function withIconStyle(
   Icon: typeof SvgIcon,

@@ -14,7 +14,7 @@ describe('Dropdown', () => {
   let handleChange: jest.Mock
 
   beforeEach(() => {
-    // ダミー関数
+    // 더미 함수
     handleChange = jest.fn()
     renderResult = render(
       <ThemeProvider theme={theme}>
@@ -33,15 +33,15 @@ describe('Dropdown', () => {
     renderResult.unmount()
   })
 
-  it('ファイルがドロップされたらonDropが呼ばれる', async () => {
-    // act関数で囲む事でプルダウンを開いているようにDOMが更新された事を保証する
+  it('파일이 드롭되면 onDrop이 호출된다', async () => {
+    // act 함수로 감싸서 풀다운을 열고 있도록 DOM이 업데이트된 것을 보증한다
     await act(async () => {
-      // クリックして、ドロップダウンの選択肢のビューを表示
+      // 클릭해서 드롭다운 선택지의 뷰를 표시한다
       const element = await screen.findByTestId('dropdown-control')
       element && fireEvent.mouseDown(element)
     })
 
-    // ドロップダウンの選択肢のビューから選択
+    // 드롭다운의 선택지 뷰에서 선택한다
     const elements = await screen.getAllByTestId('dropdown-option')
     elements && fireEvent.click(elements[0])
 

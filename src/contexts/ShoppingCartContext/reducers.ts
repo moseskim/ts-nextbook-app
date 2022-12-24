@@ -14,20 +14,20 @@ type ShopReducerAction =
     }
 
 /**
- * 商品追加アクション
- * @param product 商品
- * @param state 現在の状態
- * @returns 次の状態
+ * 상품 추가 액션
+ * @param product 상품
+ * @param state 현재 상태
+ * @returns 다음 상태
  */
 const addProductToCart = (product: Product, state: Product[]) => {
   return [...state, product]
 }
 
 /**
- * 商品削除アクション
- * @param product 商品
- * @param state 現在の状態
- * @returns 次の状態
+ * 상품 삭제 액션
+ * @param product 상품
+ * @param state 현재 상태
+ * @returns 다음 상태
  */
 const removeProductFromCart = (productId: number, state: Product[]) => {
   const removedItemIndex = state.findIndex((item) => item.id === productId)
@@ -38,10 +38,10 @@ const removeProductFromCart = (productId: number, state: Product[]) => {
 }
 
 /**
- * ショッピングカートのReducer
- * @param state 現在の状態
- * @param action アクション
- * @returns 次の状態
+ * 쇼핑 카트 Reducer
+ * @param state 현재 상태
+ * @param action 액션
+ * @returns 다음 상태
  */
 export const shopReducer: React.Reducer<Product[], ShopReducerAction> = (
   state: Product[],

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-types */
 /**
- * Responsiveプロパティ
+ * Responsive 속성
  */
 export type ResponsiveProp<T> = {
   base?: T
@@ -44,7 +44,7 @@ export type CSSPropertyAlignItems =
   | 'baseline'
   | 'normal'
   | 'stretch'
-  // コードの自動補完
+  // 코드 자동 보조
   | (string & {})
 
 export type CSSPropertyAlignContent =

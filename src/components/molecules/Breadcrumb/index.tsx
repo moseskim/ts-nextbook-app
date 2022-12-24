@@ -12,7 +12,7 @@ interface BreadcrumbProps {
 }
 
 /**
- * パンくずリスト
+ * 빵 부스러기 리스트
  */
 const Breadcrumb = ({ children }: BreadcrumbProps) => {
   return <BreadcrumbRoot as="ol">{children}</BreadcrumbRoot>

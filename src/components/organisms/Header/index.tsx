@@ -16,26 +16,26 @@ import BadgeIconButton from 'components/molecules/BadgeIconButton'
 import { useAuthContext } from 'contexts/AuthContext'
 import { useShoppingCartContext } from 'contexts/ShoppingCartContext'
 
-// ヘッダーのルート
+// 헤더 루트
 const HeaderRoot = styled.header`
   height: 88px;
   padding: ${({ theme }) => theme.space[2]} 0px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
 `
 
-// ナビゲーション
+// 내비게이션
 const Nav = styled(Flex)`
   & > span:not(:first-child) {
     margin-left: ${({ theme }) => theme.space[2]};
   }
 `
 
-// ナビゲーションのリンク
+// 내비게이션 링크
 const NavLink = styled.span`
   display: inline;
 `
 
-// アンカー
+// 앵커
 const Anchor = styled(Text)`
   cursor: pointer;
   &:hover {
@@ -44,7 +44,7 @@ const Anchor = styled(Text)`
 `
 
 /**
- * ヘッダー
+ * 헤더
  */
 const Header = () => {
   const { cart } = useShoppingCartContext()
@@ -64,28 +64,28 @@ const Header = () => {
           <NavLink>
             <Box display={{ base: 'none', md: 'block' }}>
               <Link href="/search" passHref>
-                <Anchor as="a">すべて</Anchor>
+                <Anchor as="a">모두</Anchor>
               </Link>
             </Box>
           </NavLink>
           <NavLink>
             <Box display={{ base: 'none', md: 'block' }}>
               <Link href="/search/clothes" passHref>
-                <Anchor as="a">トップス</Anchor>
+                <Anchor as="a">의류</Anchor>
               </Link>
             </Box>
           </NavLink>
           <NavLink>
             <Box display={{ base: 'none', md: 'block' }}>
               <Link href="/search/book" passHref>
-                <Anchor as="a">本</Anchor>
+                <Anchor as="a">책</Anchor>
               </Link>
             </Box>
           </NavLink>
           <NavLink>
             <Box display={{ base: 'none', md: 'block' }}>
               <Link href="/search/shoes" passHref>
-                <Anchor as="a">シューズ</Anchor>
+                <Anchor as="a">신발</Anchor>
               </Link>
             </Box>
           </NavLink>
@@ -114,7 +114,7 @@ const Header = () => {
           </NavLink>
           <NavLink>
             {(() => {
-              // 認証していたらアイコンを表示
+              // 인증된 상태라면 아이콘을 표시
               if (authUser) {
                 return (
                   <Link href={`/users/${authUser.id}`} passHref>
@@ -130,10 +130,10 @@ const Header = () => {
                   </Link>
                 )
               } else if (isLoading) {
-                // ロード中はスピナーを表示
+                // 로드 중에는 스피너를 표시
                 return <Spinner size={20} strokeWidth={2} />
               } else {
-                // サインインしてない場合はアイコンを表示
+                // 로그인 하지 않은 경우에는 아이콘을 표시
                 return (
                   <Link href="/signin" passHref>
                     <Anchor as="a">
@@ -146,7 +146,7 @@ const Header = () => {
           </NavLink>
           <NavLink>
             <Link href="/sell" passHref>
-              <Button as="a">出品</Button>
+              <Button as="a">출품</Button>
             </Link>
           </NavLink>
         </Nav>

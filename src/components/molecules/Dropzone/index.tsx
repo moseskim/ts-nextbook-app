@@ -12,9 +12,9 @@ const isInput = (value: EventTarget | null): value is HTMLInputElement => {
 }
 
 /**
- * イベントから入力されたファイルを取得
+ * 이벤트로부터 입력된 파일을 얻는다
  * @param e DragEventかChangeEvent
- * @returns Fileの配列
+ * @returns File의 배열
  */
 const getFilesFromEvent = (e: React.DragEvent | React.ChangeEvent): File[] => {
   if (isDragEvt(e)) {
@@ -26,7 +26,7 @@ const getFilesFromEvent = (e: React.DragEvent | React.ChangeEvent): File[] => {
   return []
 }
 
-// ファイルのContent-Type
+// 파일의 Content-Type
 type FileType =
   | 'image/png'
   | 'image/jpeg'
@@ -38,35 +38,35 @@ type FileType =
 
 interface DropzoneProps {
   /**
-   * 入力ファイル
+   * 입력 파일
    */
   value?: File[]
   /**
-   * <input />のname属性
+   * <input />의 name 속성
    */
   name?: string
   /**
-   * 許可されるファイルタイプ
+   * 허가된 파일 타입
    */
   acceptedFileTypes?: FileType[]
   /**
-   * 横幅
+   * 가로폭
    */
   width?: number | string
   /**
-   * 縦幅
+   * 세로폭
    */
   height?: number | string
   /**
-   * バリデーションエラーフラグ
+   * 변형 에러 플래그
    */
   hasError?: boolean
   /**
-   * ファイルがドロップ入力された時のイベントハンドラ
+   * 파일이 드롭 입력되었을 때의 이벤트 핸들러
    */
   onDrop?: (files: File[]) => void
   /**
-   * ファイルが入力された時のイベントハンドラ
+   * 파일이 입력되었을 때의 이벤트 핸들러
    */
   onChange?: (files: File[]) => void
 }
@@ -78,7 +78,7 @@ type DropzoneRootProps = {
   height: string | number
 }
 
-// ドロップゾーンの外側の外観
+// 드롭존 바깥쪽의 형태
 const DropzoneRoot = styled.div<DropzoneRootProps>`
   border: 1px dashed
     ${({ theme, isFocused, hasError }) => {
@@ -97,7 +97,7 @@ const DropzoneRoot = styled.div<DropzoneRootProps>`
     typeof height === 'number' ? `${height}px` : height};
 `
 
-// ドロップゾーンの中身
+// 드롭존 내용
 const DropzoneContent = styled.div<{
   width: string | number
   height: string | number
@@ -116,8 +116,8 @@ const DropzoneInputFile = styled.input`
 `
 
 /**
- * ドロップゾーン
- * ファイルの入力を受け付ける
+ * 드롭존
+ * 파일의 입력을 받는다
  */
 const Dropzone = (props: DropzoneProps) => {
   const {
@@ -147,7 +147,7 @@ const Dropzone = (props: DropzoneProps) => {
     onChange && onChange(files)
   }
 
-  // ドラッグ状態のマウスポインタが範囲内でドロップされた時
+  // 드래그 상태의 마우스 포인터가 범위 안에 드롭되었을 때
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault()
     e.stopPropagation()
@@ -171,27 +171,27 @@ const Dropzone = (props: DropzoneProps) => {
     onChange && onChange(files)
   }
 
-  // ドラッグ状態のマウスポインタが範囲内入っている時
+  // 드래그 상태의 마우스 포인터가 범위 안에 있을 때
   const handleDragOver = useCallback((e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault()
     e.stopPropagation()
   }, [])
 
-  // ドラッグ状態のマウスポインタが範囲外に消えた時にフォーカスを外す
+  // 드래그 상태의 마우스 포인터가 범위 밖으로 사라졌을 때 포커스를 없앤다
   const handleDragLeave = useCallback((e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault()
     e.stopPropagation()
     setIsFocused(false)
   }, [])
 
-  // ドラッグ状態のマウスポインタが範囲内に来た時にフォーカスを当てる
+  // 드래그 상태의 마우스 포인터가 범위 안에 들어왔을 때 포커스를 할당한다
   const handleDragEnter = useCallback((e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault()
     e.stopPropagation()
     setIsFocused(true)
   }, [])
 
-  // ファイル選択ダイアログを表示する
+  // 파일 선택 대화 상자를 표시한다
   const handleClick = () => {
     inputRef.current?.click()
   }
@@ -204,7 +204,7 @@ const Dropzone = (props: DropzoneProps) => {
 
   return (
     <>
-      {/* ドラックアンドドロップイベントを管理 */}
+      {/* 드래그 앤 드롭 이벤트를 관리한다 */}
       <DropzoneRoot
         ref={rootRef}
         isFocused={isFocused}
@@ -218,7 +218,7 @@ const Dropzone = (props: DropzoneProps) => {
         height={height}
         data-testid="dropzone"
       >
-        {/* ダミーインプット */}
+        {/* 더미 입력 */}
         <DropzoneInputFile
           ref={inputRef}
           type="file"
@@ -229,7 +229,7 @@ const Dropzone = (props: DropzoneProps) => {
         />
         <DropzoneContent width={width} height={height}>
           <CloudUploadIcon size={24} />
-          <span style={{ textAlign: 'center' }}>デバイスからアップロード</span>
+          <span style={{ textAlign: 'center' }}>기기에서 업로드</span>
         </DropzoneContent>
       </DropzoneRoot>
     </>

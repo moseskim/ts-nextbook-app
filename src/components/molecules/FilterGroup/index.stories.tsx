@@ -7,20 +7,20 @@ export default {
   argTypes: {
     title: {
       control: { type: 'text' },
-      description: 'タイトル',
+      description: '제목',
       table: {
         type: { summary: 'string' },
       },
     },
     items: {
       control: { type: 'array' },
-      description: 'オプション',
+      description: '옵션',
       table: {
         type: { summary: 'array' },
       },
     },
     onChange: {
-      description: 'onChangeイベントハンドラ',
+      description: 'onChange 이벤트 핸들러',
       table: {
         type: { summary: 'function' },
       },

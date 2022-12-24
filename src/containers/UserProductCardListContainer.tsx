@@ -11,23 +11,23 @@ const context: ApiContext = {
 
 interface UserProductCardListContainerProps {
   /**
-   * 商品を所有するユーザーID
+   * 상품을 소유한 사용자 ID
    */
   userId: number
   /**
-   * 初期で表示する商品リスト
+   * 초기에 표시할 상품 리스트
    */
   products?: Product[]
 }
 
 /**
- * ユーザー商品カードリストコンテナ
+ * 사용자 상품 카드 리스트 컨테이너
  */
 const UserProductCardListContainer = ({
   userId,
   products,
 }: UserProductCardListContainerProps) => {
-  // ユーザーの所持する商品
+  // 사용자가 소요한 상품
   const { products: userProducts } = useSearch(context, {
     userId,
     initial: products,
@@ -39,7 +39,7 @@ const UserProductCardListContainer = ({
         <Fragment key={p.id}>
           <Link href={`/products/${p.id}`} passHref>
             <a>
-              {/* 商品カード */}
+              {/* 상품 카드 */}
               <ProductCard
                 variant="small"
                 title={p.title}

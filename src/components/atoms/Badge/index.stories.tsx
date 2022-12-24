@@ -6,14 +6,14 @@ export default {
   argTypes: {
     content: {
       control: { type: 'text' },
-      description: 'バッジのテキスト',
+      description: '배지 테스트',
       table: {
         type: { summary: 'string' },
       },
     },
     backgroundColor: {
       control: { type: 'color' },
-      description: 'バッジの色',
+      description: '배지 색상',
       table: {
         type: { summary: 'string' },
       },

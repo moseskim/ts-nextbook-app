@@ -6,20 +6,20 @@ export default {
   argTypes: {
     label: {
       control: { type: 'text' },
-      description: '表示ラベル',
+      description: '표시 라벨',
       table: {
         type: { summary: 'text' },
       },
     },
     checked: {
       control: { type: 'boolean' },
-      description: 'チェック',
+      description: '체크',
       table: {
         type: { summary: 'number' },
       },
     },
     onChange: {
-      description: '値が変化した時のイベントハンドラ',
+      description: '값이 변화했을 때의 이벤트 핸들러',
       table: {
         type: { summary: 'function' },
       },

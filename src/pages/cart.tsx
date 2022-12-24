@@ -10,7 +10,7 @@ import CartContainer from 'containers/CartContainer'
 import { useAuthGuard } from 'utils/hooks'
 
 const CartPage: NextPage = () => {
-  // 認証ガード
+  // 인증 가드
   useAuthGuard()
 
   return (
@@ -26,18 +26,18 @@ const CartPage: NextPage = () => {
           <Breadcrumb>
             <BreadcrumbItem>
               <Link href="/">
-                <a>トップ</a>
+                <a>톱</a>
               </Link>
             </BreadcrumbItem>
-            <BreadcrumbItem>カート</BreadcrumbItem>
+            <BreadcrumbItem>카트</BreadcrumbItem>
           </Breadcrumb>
           <Box>
             <Text display="block" variant="large" as="h1">
-              カート
+              카트
             </Text>
             {/*
-              カートコンテナ
-              カートの中にある商品を表示、購入、削除
+              카트 컨테이너
+              카트 안에 있는 상품을 표시, 구입, 삭제
             */}
             <CartContainer />
           </Box>

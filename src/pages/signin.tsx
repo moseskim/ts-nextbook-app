@@ -8,11 +8,11 @@ import SigninFormContainer from 'containers/SigninFormContainer'
 
 const SigninPage: NextPage = () => {
   const router = useRouter()
-  // 認証後のイベントハンドラ
+  // 인증 후의 이벤트 핸들러
   const handleSignin = async (err?: Error) => {
     if (!err) {
-      // サインインに成功し、クエリが指定されている場合はそのURLに移動。
-      // デフォルトはトップページに移動。
+      // 로그인에 성공하고, 쿼리가 지정되어 있을 때는 해당 URL로 이동한다.
+      // 기본은 톱 페이지로 이동한다.
       const redurectTo = (router.query['redirect_to'] as string) ?? '/'
 
       console.log('Redirecting', redurectTo)
@@ -40,9 +40,9 @@ const SigninPage: NextPage = () => {
           </Box>
           <Box width="100%">
             {/*
-              サインインフォームコンテナ
-              SigninFormのユーザー名・パスワードから認証APIを呼び出し、
-              onSigninコールバックが呼び出される
+              로그인폼 컨테이너
+              SigninForm의 사용자명/비밀번호로부터 인증 API를 호출하고,
+              onSignin 콜백이 호출된다
             */}
             <SigninFormContainer onSignin={handleSignin} />
           </Box>

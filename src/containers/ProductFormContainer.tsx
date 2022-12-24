@@ -10,18 +10,18 @@ const context: ApiContext = {
 
 interface ProductFormContainerProps {
   /**
-   * 商品が保存された時のイベントハンドラ
+   * 상품이 저장되었을 때의 이벤트 핸들러
    */
   onSave?: (error?: Error, product?: Product) => void
 }
 
 /**
- * 商品投稿フォームコンテナ
+ * 상품 게시폼 컨테이너
  */
 const ProductFormContainer = ({ onSave }: ProductFormContainerProps) => {
   const { authUser } = useAuthContext()
   const setGlobalSpinner = useGlobalSpinnerActionsContext()
-  // 出品ボタンを押した時
+  // 게시 버튼을 눌렀을 때
   const handleSave = async (data: ProductFormData) => {
     if (!authUser) return
 
@@ -32,14 +32,14 @@ const ProductFormContainer = ({ onSave }: ProductFormContainerProps) => {
       category: data.category,
       condition: data.condition,
       price: Number(data.price),
-      imageUrl: '/products/shoes/feet-1840619_1920.jpeg', // ダミー画像
+      imageUrl: '/products/shoes/feet-1840619_1920.jpeg', // 더미 이미지
       blurDataUrl: '',
       owner: authUser,
     }
 
     try {
       setGlobalSpinner(true)
-      // プロダクトAPIで商品を追加する
+      // 제품 API로 상품을 추가한다
       const ret = await addProduct(context, { product })
       onSave && onSave(undefined, ret)
     } catch (err: unknown) {

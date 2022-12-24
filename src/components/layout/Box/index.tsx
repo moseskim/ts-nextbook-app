@@ -26,8 +26,8 @@ export type BoxProps = {
 }
 
 /**
- * Boxコンポーネント
- * レイアウトの調整に利用する
+ * Box 컴포넌트
+ * 레이아웃 조정에 사용한다
  */
 const Box = styled.div<BoxProps>`
   ${(props) => toPropValue('color', props.color, props.theme)}

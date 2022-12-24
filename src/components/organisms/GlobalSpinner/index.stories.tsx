@@ -14,7 +14,7 @@ export const WithContextProvider = () => {
     const setGlobalSpinner = useGlobalSpinnerActionsContext()
     const handleClick = () => {
       setGlobalSpinner(true)
-      // 5秒後に閉じる
+      // 5초 후에 닫는다
       setTimeout(() => {
         setGlobalSpinner(false)
       }, 5000)
@@ -23,7 +23,7 @@ export const WithContextProvider = () => {
     return (
       <>
         <GlobalSpinner />
-        <Button onClick={handleClick}>スピナー表示</Button>
+        <Button onClick={handleClick}>스피터 표시</Button>
       </>
     )
   }

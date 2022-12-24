@@ -5,38 +5,38 @@ import Box from 'components/layout/Box'
 
 interface ProductCardProps {
   /**
-   * 商品タイトル
+   * 상품 제목
    */
   title: string
   /**
-   * 商品価格
+   * 상품 가격
    */
   price: number
   /**
-   * 商品画像URL
+   * 상품 기획 URL
    */
   imageUrl: string
   /**
-   * 商品のぼかし画像のデータURIスキーム
+   * 상품의 흐릿한 이미지의 데이터 URI 스팀
    */
   blurDataUrl?: string
   /**
-   * バリアント（表示スタイル）
+   * 변형(표시 스타일)
    */
   variant?: 'listing' | 'small' | 'detail'
 }
 
-// 商品カードのコンテナ
+// 상품 카드 컨테이너
 const ProductCardContainer = styled.div`
   position: relative;
 `
 
-// 商品カード画像のコンテナ
+// 상품 카드 이미지 컨테이너
 const ProductCardImageContainer = styled.div`
   z-index: 99;
 `
 
-// 商品カードの情報
+// 상품 카드 정보
 const ProductCardInfo = styled.div`
   position: absolute;
   z-index: 100;
@@ -45,7 +45,7 @@ const ProductCardInfo = styled.div`
 `
 
 /**
- * 商品カード
+ * 상품 카드
  */
 const ProductCard = ({
   title,

@@ -10,7 +10,7 @@ import {
   Space,
 } from 'utils/styles'
 
-// ボタンのバリアント
+// 버튼 변형
 export type ButtonVariant = 'primary' | 'secondary' | 'danger'
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -50,7 +50,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 }
 
 const variants = {
-  // プライマリ
+  // Primary
   primary: {
     color: 'white',
     backgroundColor: 'primary',
@@ -64,7 +64,7 @@ const variants = {
       },
     },
   },
-  // セカンダリ
+  // Secondary
   secondary: {
     color: 'white',
     backgroundColor: 'secondary',
@@ -78,7 +78,7 @@ const variants = {
       },
     },
   },
-  // デンジャー
+  // Danger
   danger: {
     color: 'white',
     backgroundColor: 'danger',
@@ -95,12 +95,12 @@ const variants = {
 }
 
 /**
- * ボタン
- * バリアント、色、タイポグラフィ、レイアウト、スペース関連のPropsを追加
+ * 버튼
+ * 변형, 색생, 타이포그래피, 레이아웃, 스페이스 관련 Props 추가
  */
 const Button = styled.button<ButtonProps>`
   ${({ variant, color, backgroundColor, pseudoClass, theme }) => {
-    // バリアントのスタイルの適用
+    // 변형 스타일 적용
     if (variant && variants[variant]) {
       const styles = []
       !color &&

@@ -32,8 +32,8 @@ export const useAuthContext = (): AuthContextType =>
   useContext<AuthContextType>(AuthContext)
 
 /**
- * 認証コンテキストプロバイダー
- * @param params パラメータ
+ * 인증 컨텍스트 제공자
+ * @param params 파라미터
  */
 export const AuthContextProvider = ({
   context,
@@ -45,13 +45,13 @@ export const AuthContextProvider = ({
   )
   const isLoading = !data && !error
 
-  // サインイン
+  // 로그인
   const signinInternal = async (username: string, password: string) => {
     await signin(context, { username, password })
     await mutate()
   }
 
-  // サインアウト
+  // 로그아웃
   const signoutInternal = async () => {
     await signout(context)
     await mutate()

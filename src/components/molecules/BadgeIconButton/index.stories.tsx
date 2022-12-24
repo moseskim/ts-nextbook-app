@@ -11,21 +11,21 @@ export default {
   argTypes: {
     icon: {
       control: { type: 'object' },
-      description: 'アイコン',
+      description: '아이콘',
       table: {
         type: { summary: 'object' },
       },
     },
     badgeContent: {
       control: { type: 'number' },
-      description: 'バッジのカウンター',
+      description: '배지 카운터',
       table: {
         type: { summary: 'number' },
       },
     },
     badgeBackgroundColor: {
       control: { type: 'color' },
-      description: 'バッジの背景色',
+      description: '배지 배경 색상',
       table: {
         type: { summary: 'string' },
       },

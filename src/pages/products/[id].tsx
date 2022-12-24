@@ -23,9 +23,9 @@ import useProduct from 'services/products/use-product'
 import type { ApiContext, Category } from 'types'
 
 const categoryNameDict: Record<Category, string> = {
-  book: '本',
-  shoes: 'シューズ',
-  clothes: 'トップス',
+  book: '책',
+  shoes: '신발',
+  clothes: '의류',
 }
 
 const context: ApiContext = {
@@ -39,10 +39,10 @@ const ProductPage: NextPage<ProductPageProps> = ({
   product: initial,
 }: ProductPageProps) => {
   const router = useRouter()
-  // 商品
+  // 상품
   const data = useProduct(context, { id, initial })
 
-  // カートに追加したら、自動的にカートページに遷移する
+  // 카트에 추가했다면, 자동으로 카트 페이지로 이동한다
   const handleAddToCartButtonClick = () => {
     router.push('/cart')
   }
@@ -67,12 +67,12 @@ const ProductPage: NextPage<ProductPageProps> = ({
           <Breadcrumb>
             <BreadcrumbItem>
               <Link href="/">
-                <a>トップ</a>
+                <a>톱</a>
               </Link>
             </BreadcrumbItem>
             <BreadcrumbItem>
               <Link href="/search">
-                <a>検索</a>
+                <a>검색</a>
               </Link>
             </BreadcrumbItem>
             <BreadcrumbItem>
@@ -93,11 +93,11 @@ const ProductPage: NextPage<ProductPageProps> = ({
           <Separator />
           <Box paddingTop={1}>
             <Text as="h2" variant="large" marginTop={0}>
-              出品者
+              게시자
             </Text>
             <Link href={`/users/${product.owner.id}`}>
               <a>
-                {/* ユーザープロファイル */}
+                {/* 사용자 프로필 */}
                 <UserProfile
                   variant="small"
                   username={product.owner.username}
@@ -114,7 +114,7 @@ const ProductPage: NextPage<ProductPageProps> = ({
             flexDirection="column"
             height={{ base: '', md: '100%' }}
           >
-            {/* 商品概要を表示、改行ごとにテキストコンポーネントでラップ */}
+            {/* 상품 개요를 표시, 줄바꿈별로 텍스트 컴포넌트로 감싼다 */}
             <Box>
               {product.description
                 .split('\n')
@@ -125,9 +125,8 @@ const ProductPage: NextPage<ProductPageProps> = ({
                 ))}
             </Box>
             {/*
-              カート追加ボタンコンテナ
-              ボタンを押されたらShoppingCartContextに商品を追加する
-            */}
+              카트 추가 버튼 컨테이너
+              버튼을 눌렀다면 ShoppingCartContext에 상품을 추가한다 */}
             <AddToCartButtonContainer
               product={product}
               onAddToCartButtonClick={handleAddToCartButtonClick}
@@ -143,7 +142,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const context: ApiContext = {
     apiRootUrl: process.env.API_BASE_URL || 'http://localhost:5000',
   }
-  // 商品からパスを生成
+  // 상품으로부터 경로를 생성
   const products = await getAllProducts(context)
   const paths = products.map((p) => `/products/${p.id}`)
 
@@ -161,8 +160,8 @@ export const getStaticProps: GetStaticProps = async ({
     throw new Error('params is undefined')
   }
 
-  // 商品を取得し、静的ページを作成
-  // 10秒でstaleな状態にし、静的ページを更新する
+  // 상품을 얻고, 정적 페이지를 생성
+  // 10초 동안 stale 상태로 만들고, 정적 페이지를 업데이트한다
   const productId = Number(params.id)
   const product = await getProduct(context, { id: productId })
 

@@ -3,24 +3,24 @@ import { fetcher } from 'utils'
 
 export type GetUserParams = {
   /**
-   * ユーザーID
+   * 사용자 ID
    */
   id: number
 }
 
 /**
- * ユーザーAPI（個別取得）
- * @param context APIコンテキスト
- * @param params パラメータ
- * @returns ユーザー
+ * 사용자 API(개별 취득)
+ * @param context API 컨텍스트
+ * @param params 파라미터
+ * @returns 사용자
  */
 const getUser = async (
   context: ApiContext,
   { id }: GetUserParams,
 ): Promise<User> => {
   /**
-  // ユーザーAPI
-  // サンプルレスポンス
+  // 사용자 API
+  // 샘플 응답
   {
     "id": "1",
     "username": "taketo",

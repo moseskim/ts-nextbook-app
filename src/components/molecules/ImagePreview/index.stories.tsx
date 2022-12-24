@@ -9,34 +9,34 @@ export default {
   argTypes: {
     src: {
       control: { type: 'text' },
-      description: '画像URL',
+      description: '이미지 URL',
       table: {
         type: { summary: 'string' },
       },
     },
     alt: {
       control: { type: 'text' },
-      description: '代替テキスト',
+      description: '대체 텍스트',
       table: {
         type: { summary: 'string' },
       },
     },
     height: {
       control: { type: 'number' },
-      description: '縦幅',
+      description: '세로폭',
       table: {
         type: { summary: 'number' },
       },
     },
     width: {
       control: { type: 'number' },
-      description: '横幅',
+      description: '가로폭',
       table: {
         type: { summary: 'number' },
       },
     },
     onRemove: {
-      description: '削除ボタンを押した時のイベントハンドラ',
+      description: '삭제 버튼을 클릭했을 때의 이벤트 핸들러',
       table: {
         type: { summary: 'function' },
       },

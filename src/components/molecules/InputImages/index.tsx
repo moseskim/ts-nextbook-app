@@ -30,7 +30,7 @@ interface InputImagesProps {
 }
 
 /**
- * インプットイメージ
+ * 입력 이미지
  */
 const InputImages = (props: InputImagesProps) => {
   const {

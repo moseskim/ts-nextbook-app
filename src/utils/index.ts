@@ -8,7 +8,7 @@ export const fetcher = async (
   if (!res.ok) {
     const errorRes = await res.json()
     const error = new Error(
-      errorRes.message ?? 'APIリクエスト中にエラーが発生しました',
+      errorRes.message ?? 'API 요청 중에 에러가 발생했습니다',
     )
 
     throw error

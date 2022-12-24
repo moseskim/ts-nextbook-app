@@ -27,7 +27,7 @@ const ScaleEffectImage = styled(Image)`
 `
 
 /**
- * スケールイメージ
+ * 스케일 이미지
  */
 const ScaleImage = ({
   containerWidth,

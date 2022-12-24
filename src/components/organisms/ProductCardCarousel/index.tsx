@@ -5,7 +5,7 @@ interface ProductCardCarouselProps {
 }
 
 /**
- * 商品カードカルーセル
+ * 상품 카드 캐러셀
  */
 const ProductCardCarousel = ({ children }: ProductCardCarouselProps) => {
   return (

@@ -81,12 +81,12 @@ const variants = {
 }
 
 /**
- * テキスト
- * バリアント、色、タイポグラフィ、レイアウト、スペース関連のPropsを追加
+ * 텍스트
+ * 변형, 색상, 타이포그래피, 레이아웃, 스페이스 관련 Props 추가
  */
 const Text = styled.span<TextProps>`
   ${({ variant, fontSize, letterSpacing, lineHeight, theme }) => {
-    // バリアントのスタイルの適用
+    // 변형 스타일에 적용
     if (variant && variants[variant]) {
       const styles = []
       !fontSize &&

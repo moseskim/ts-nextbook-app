@@ -8,7 +8,7 @@ interface SeparatorProps {
 const getMargin = ({ children }: SeparatorProps) => (children ? '.50em' : '0em')
 
 /**
- * セパレーター
+ * 세퍼레이터
  */
 const Separator = styled.div<SeparatorProps>`
   height: 22px;

@@ -10,7 +10,7 @@ import Flex from 'components/layout/Flex'
 export interface CheckBoxProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'defaultValue'> {
   /**
-   * 表示ラベル
+   * 표시 라벨
    */
   label?: string
 }
@@ -26,7 +26,7 @@ const Label = styled.label`
 `
 
 /**
- * チェックボックス
+ * 체크 박스
  */
 const CheckBox = (props: CheckBoxProps) => {
   const { id, label, onChange, checked, ...rest } = props
@@ -35,7 +35,7 @@ const CheckBox = (props: CheckBoxProps) => {
   const onClick = useCallback(
     (e: React.MouseEvent) => {
       e.preventDefault()
-      // チェックボックスを強制的にクリック
+      // 체크 박수를 강제로 클릭
       ref.current?.click()
       setIsChecked((isChecked) => !isChecked)
     },
@@ -43,7 +43,7 @@ const CheckBox = (props: CheckBoxProps) => {
   )
 
   useEffect(() => {
-    // パラメータからの変更を受け付ける
+    // 파라미터로부터 변경 내용을 받는다
     setIsChecked(checked ?? false)
   }, [checked])
 
@@ -58,13 +58,13 @@ const CheckBox = (props: CheckBoxProps) => {
         onChange={onChange}
       />
       <Flex alignItems="center">
-        {/* チェックボックスのON/OFFの描画 */}
+        {/* 체크 박스 ON/OFF 그리기 */}
         {checked ?? isChecked ? (
           <CheckBoxIcon size={20} onClick={onClick} />
         ) : (
           <CheckBoxOutlineBlankIcon size={20} onClick={onClick} />
         )}
-        {/* チェックボックスのラベル */}
+        {/* 체크 박스 라벨 */}
         {label && label.length > 0 && (
           <Label htmlFor={id} onClick={onClick}>
             <Text>{label}</Text>

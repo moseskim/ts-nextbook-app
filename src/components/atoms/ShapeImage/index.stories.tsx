@@ -8,7 +8,7 @@ export default {
       options: ['circle', 'square'],
       control: { type: 'radio' },
       defaultValue: 'square',
-      description: '画像の形',
+      description: '이미지 형태',
       table: {
         type: { summary: 'circle | square' },
         defaultValue: { summary: 'square' },
@@ -16,7 +16,7 @@ export default {
     },
     src: {
       control: { type: 'text' },
-      description: '画像URL',
+      description: '이미지 URL',
       table: {
         type: { summary: 'string' },
       },
@@ -24,14 +24,14 @@ export default {
     width: {
       control: { type: 'number' },
       defaultValue: 320,
-      description: '横幅',
+      description: '가로폭',
       table: {
         type: { summary: 'number' },
       },
     },
     height: {
       control: { type: 'number' },
-      description: '縦幅',
+      description: '세로폭',
       defaultValue: 320,
       table: {
         type: { summary: 'number' },

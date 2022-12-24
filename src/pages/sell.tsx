@@ -14,12 +14,12 @@ const SellPage: NextPage = () => {
 
   const handleSave = (err?: Error) => {
     if (authUser && !err) {
-      // 成功したら、ユーザーページに移動
+      // 성공하면 사용자 페이지로 이동한다
       router.push(`/users/${authUser.id}`)
     }
   }
 
-  // 認証ガード
+  // 인증 가드
   useAuthGuard()
 
   return (
@@ -48,8 +48,8 @@ const SellPage: NextPage = () => {
           </Box>
           <Box width="100%">
             {/*
-              商品投稿フォームコンテナ
-              商品情報を入力し、プロダクトAPIを通じて商品を保存
+              상품 게시폼 컨테이너
+              상품 정보를 입력하고 제품 API를 통해 상품을 저장
             */}
             <ProductFormContainer onSave={handleSave} />
           </Box>

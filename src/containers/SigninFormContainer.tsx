@@ -4,27 +4,27 @@ import { useGlobalSpinnerActionsContext } from 'contexts/GlobalSpinnerContext'
 
 interface SigninFormContainerProps {
   /**
-   * サインインした時に呼ばれるイベントハンドラ
+   * 로그인 했을 때 호출되는 이벤트 핸들러
    */
   onSignin: (error?: Error) => void
 }
 
 /**
- * サインインフォームコンテナ
+ * 로그인폼 컨테이너
  */
 const SigninFormContainer = ({ onSignin }: SigninFormContainerProps) => {
   const { signin } = useAuthContext()
   const setGlobalSpinner = useGlobalSpinnerActionsContext()
-  // サインインボタンを押された時のイベントハンドラ
+  // 로그인 버튼을 눌렀을 때의 이벤트 핸들러
   const handleSignin = async (username: string, password: string) => {
     try {
-      // ローディングスピナーを表示する
+      // 로딩 스피너를 표시한다
       setGlobalSpinner(true)
       await signin(username, password)
       onSignin && onSignin()
     } catch (err: unknown) {
       if (err instanceof Error) {
-        // エラーの内容を表示
+        // 에러 내용을 표시한다
         window.alert(err.message)
         onSignin && onSignin(err)
       }
