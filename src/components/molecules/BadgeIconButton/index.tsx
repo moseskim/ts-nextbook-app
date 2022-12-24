@@ -23,7 +23,7 @@ type BadgeIconButton = {
 }
 
 /**
- * バッジ付きアイコンボタン
+ * 배지가 달린 아이콘 버튼
  */
 const BadgeIconButton = ({
   icon,

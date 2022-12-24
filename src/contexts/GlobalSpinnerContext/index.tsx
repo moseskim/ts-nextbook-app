@@ -6,11 +6,11 @@ const GlobalSpinnerActionsContext = createContext<
   // eslint-disable-next-line @typescript-eslint/no-empty-function
 >(() => {})
 
-// グローバルスピナーの表示・非表示
+// 글로벌 스피너 표시/비표시
 export const useGlobalSpinnerContext = (): boolean =>
   useContext<boolean>(GlobalSpinnerContext)
 
-// グローバルスピナーの表示・非表示のアクション
+// 글로벌 스피너 표시/비표시 액션
 export const useGlobalSpinnerActionsContext = (): React.Dispatch<
   React.SetStateAction<boolean>
 > =>
@@ -23,7 +23,7 @@ interface GlobalSpinnerContextProviderProps {
 }
 
 /**
- * グローバルスピナーコンテキストプロバイダー
+ * 글로벌 스피너 컨텍스트 제공자
  */
 const GlobalSpinnerContextProvider = ({
   children,

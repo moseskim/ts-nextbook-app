@@ -20,18 +20,18 @@ const Anchor = styled(Text)`
 `
 
 const categoryNameDict: Record<Category, string> = {
-  book: '本',
-  shoes: 'シューズ',
-  clothes: 'トップス',
+  book: '책',
+  shoes: '신발',
+  clothes: '의류',
 }
 
 const SearchPage: NextPage = () => {
   const router = useRouter()
-  // 商品のカテゴリーをクエリから取得
+  // 상품 카테고리를 쿼리로부터 얻는다
   const slug: Category[] = Array.isArray(router.query.slug)
     ? (router.query.slug as Category[])
     : []
-  // 商品の状態をクエリから取得
+  // 상품 상태를 쿼리로부터 얻는다
   const conditions = (() => {
     if (Array.isArray(router.query.condition)) {
       return router.query.condition as Condition[]
@@ -70,15 +70,15 @@ const SearchPage: NextPage = () => {
           <Breadcrumb>
             <BreadcrumbItem>
               <Link href="/">
-                <a>トップ</a>
+                <a>톱</a>
               </Link>
             </BreadcrumbItem>
             <BreadcrumbItem>
               <Link href="/search">
-                <a>検索</a>
+                <a>검색</a>
               </Link>
             </BreadcrumbItem>
-            {/* パンくずリストを選択したカテゴリから生成 */}
+            {/* 빵 부스러기 리스트를 선택한 카테고리에서 생성 */}
             {slug.slice(0, slug.length - 1).map((category, i) => (
               <BreadcrumbItem key={i}>
                 <Link href={`/search/${slug.slice(0, i + 1).join('/')}`}>
@@ -97,26 +97,26 @@ const SearchPage: NextPage = () => {
         <Flex>
           <Flex flexDirection={{ base: 'column', md: 'row' }}>
             <Box as="aside" minWidth="200px" marginBottom={{ base: 2, md: 0 }}>
-              {/* 商品の状態のフィルタ */}
+              {/* 상품 상태 필터 */}
               <FilterGroup
-                title="商品の状態"
+                title="상품 상태"
                 items={[
-                  { label: '新品', name: 'new' },
-                  { label: '中古', name: 'used' },
+                  { label: '새 상품', name: 'new' },
+                  { label: '중고 상품', name: 'used' },
                 ]}
                 value={conditions}
                 onChange={handleChange}
               />
               <Box paddingTop={1}>
                 <Text as="h2" fontWeight="bold" variant="mediumLarge">
-                  カテゴリ
+                  카테고리
                 </Text>
                 <Box>
                   <Link href="/search/" passHref>
-                    <Anchor as="a">すべて</Anchor>
+                    <Anchor as="a">모두</Anchor>
                   </Link>
                 </Box>
-                {/* カテゴリのリンク */}
+                {/* 카테고리 링크 */}
                 {Object.keys(categoryNameDict).map(
                   (category: string, i: number) => (
                     <Box key={i} marginTop={1}>
@@ -137,11 +137,11 @@ const SearchPage: NextPage = () => {
                 fontWeight="bold"
                 variant="mediumLarge"
               >
-                商品一覧
+                상품 목록
               </Text>
               {/*
-                商品カードリストコンテナ
-                検索クエリから商品カードリストを表示
+                상품 카드 리스트 컨테이너
+                상품 쿼리로부터 상품 카드 리스트를 표시
                */}
               <ProductCardListContainer
                 category={slug.length > 0 ? slug[slug.length - 1] : undefined}

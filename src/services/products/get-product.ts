@@ -3,16 +3,16 @@ import { fetcher } from 'utils'
 
 export type GetProductParams = {
   /**
-   * 取得する商品
+   * 취득할 상품
    */
   id: number
 }
 
 /**
- * プロダクトAPI（個別取得）
- * @param context APIコンテキスト
- * @param params 商品ID
- * @returns 商品
+ * 제품 API(개별 취득)
+ * @param context API 컨텍스트
+ * @param params 상품 ID
+ * @returns 상품
  */
 const getProduct = async (
   context: ApiContext,

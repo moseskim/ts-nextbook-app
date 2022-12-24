@@ -7,7 +7,7 @@ export const useAuthGuard = (): void => {
   const { authUser, isLoading } = useAuthContext()
 
   useEffect(() => {
-    // ユーザーが取得できない場合はサインインページにリダイレクト
+    // 사용자를 얻을 수 없을 때는 로그인 페이지로 리다이렉트
     if (!authUser && !isLoading) {
       const currentPath = router.pathname
 

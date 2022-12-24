@@ -24,7 +24,7 @@ interface ShoppingCartContextProviderProps {
 }
 
 /**
- * ショッピングカートコンテキストプロバイダー
+ * 쇼핑 카트 컨텍스트 제공자
  */
 export const ShoppingCartContextProvider = ({
   children,
@@ -32,12 +32,12 @@ export const ShoppingCartContextProvider = ({
   const products: Product[] = []
   const [cartState, dispatch] = useReducer(shopReducer, products)
 
-  // 商品をカートに追加
+  // 상푸을 카트에 추가
   const addProductToCart = (product: Product) => {
     dispatch({ type: ADD_PRODUCT, payload: product })
   }
 
-  // 商品をカートから削除
+  // 상품을 카트에서 삭제
   const removeProductFromCart = (productId: number) => {
     dispatch({ type: REMOVE_PRODUCT, payload: productId })
   }

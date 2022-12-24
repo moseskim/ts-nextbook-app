@@ -6,7 +6,7 @@ import Text from 'components/atoms/Text'
 import Box from 'components/layout/Box'
 import Flex from 'components/layout/Flex'
 
-// 削除ボタンのテキスト
+// 삭제 버튼의 텍스트
 const RemoveText = styled(Text)`
   cursor: pointer;
   &:hover {
@@ -16,33 +16,33 @@ const RemoveText = styled(Text)`
 
 interface CartProductProps {
   /**
-   * 商品ID
+   * 상품 ID
    */
   id: number
   /**
-   * 商品画像URL
+   * 상품 이미지 URL
    */
   imageUrl: string
   /**
-   * 商品タイトル
+   * 상품명
    */
   title: string
   /**
-   * 商品価格
+   * 상품 가격
    */
   price: number
   /**
-   * 購入ボタンを押した時のイベントハンドラ
+   * 구입 버튼을 클릭했을 때의 이벤트 핸들러
    */
   onBuyButtonClick?: (id: number) => void
   /**
-   * 削除ボタンを押した時のイベントハンドラ
+   * 삭제 버튼을 클릭했을 때의 이벤트 핸들러
    */
   onRemoveButtonClick?: (id: number) => void
 }
 
 /**
- * カート商品
+ * 카트 상품
  */
 const CartProduct = ({
   id,
@@ -90,14 +90,14 @@ const CartProduct = ({
               </Text>
             </Box>
             <Flex marginTop={{ base: 2, md: 0 }}>
-              {/* 購入ボタン */}
+              {/* 구입 버튼 */}
               <Button
                 width={{ base: '100px', md: '200px' }}
                 onClick={() => onBuyButtonClick && onBuyButtonClick(id)}
               >
-                購入
+                구입
               </Button>
-              {/* 削除ボタン (モバイル) */}
+              {/* 삭제 버튼(모바일) */}
               <Button
                 marginLeft={1}
                 width={{ base: '100px', md: '200px' }}
@@ -105,19 +105,19 @@ const CartProduct = ({
                 variant="danger"
                 onClick={() => onRemoveButtonClick && onRemoveButtonClick(id)}
               >
-                削除
+                삭제
               </Button>
             </Flex>
           </Flex>
         </Box>
       </Flex>
       <Box display={{ base: 'none', md: 'block' }}>
-        {/* 削除ボタン (デスクトップ) */}
+        {/* 삭제 버튼(데스크톱) */}
         <RemoveText
           color="danger"
           onClick={() => onRemoveButtonClick && onRemoveButtonClick(id)}
         >
-          カートから削除
+          카트에서 삭제
         </RemoveText>
       </Box>
     </Flex>

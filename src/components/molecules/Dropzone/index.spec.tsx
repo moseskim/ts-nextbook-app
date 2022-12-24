@@ -20,8 +20,8 @@ describe('Dropzone', () => {
     renderResult.unmount()
   })
 
-  it('ファイルがドロップされたらonDropが呼ばれる', async () => {
-    // ファイルをドロップする
+  it('파일이 드롭되면 onDrop이 호출된다', async () => {
+    // 파일을 드롭한다
     const element = await screen.findByTestId('dropzone')
     fireEvent.drop(element, {
       dataTransfer: {
@@ -29,7 +29,7 @@ describe('Dropzone', () => {
       },
     })
 
-    // ファイルが入力されたか確認
+    // 파일이 입력되었는지 확인
     expect(handleDrop).toHaveBeenCalledTimes(1)
   })
 })

@@ -9,22 +9,22 @@ const context: ApiContext = {
 }
 
 /**
- * カートコンテナ
+ * 카트 컨테이너
  */
 const CartContainer = () => {
   const setGlobalSpinner = useGlobalSpinnerActionsContext()
   const { cart, removeProductFromCart } = useShoppingCartContext()
-  // 削除ボタンを押した時、商品を削除
+  // 삭제 버튼 클릭 시, 상품을 삭제
   const handleRemoveButtonClick = (id: number) => {
     removeProductFromCart(id)
   }
-  // 購入ボタンを押した時、商品を購入
+  // 구입 버튼 클릭 시, 상품을 구입
   const handleBuyButtonClick = async (id: number) => {
     try {
       setGlobalSpinner(true)
       await purchase(context, { productId: id })
-      window.alert('購入しました')
-      // 商品購入後はカートから商品を削除する
+      window.alert('구입했습니다')
+      // 상품 구입 후에는 카트에서 상품을 삭제한다
       removeProductFromCart(id)
     } catch (err: unknown) {
       if (err instanceof Error) {

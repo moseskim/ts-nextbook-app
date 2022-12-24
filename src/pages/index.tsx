@@ -16,7 +16,7 @@ const HomePage: NextPage<HomePageProps> = ({
   clothesProducts,
   shoesProducts,
 }: HomePageProps) => {
-  // 商品カードカルーセルをレンダリング
+  // 상품 카드 캐러셀을 렌더링
   const renderProductCardCarousel = (products: Product[]) => {
     return (
       <ProductCardCarousel>
@@ -50,31 +50,29 @@ const HomePage: NextPage<HomePageProps> = ({
         >
           <Box width="100%">
             <Text as="h1" marginBottom={0} color="white" variant="extraLarge">
-              Gihyo C2Cで
+              Gihyo C2C에서 
             </Text>
             <Text as="h1" marginTop={0} color="white" variant="extraLarge">
-              お気に入りのアイテムを見つけよう
+              마음에 드는 아이템을 찾자
             </Text>
           </Box>
           <Box width="100%">
             <Text as="p" color="white" variant="mediumLarge">
-              Gihyo
-              C2Cは実践的なNext.jsアプリケーション開発で使われるデモアプリです。モックサーバを使用しています。
-              ソースコードは
+              Gihyo C2C는 실전적인 Next.js 애플리케이션 개발에서 사용되는 데모 애플리케이션입니다. 목 서버를 사용하고 있습니다. 소스 코드는 
               <Text
                 as="a"
                 style={{ textDecoration: 'underline' }}
                 target="_blank"
-                href="https://github.com/gihyo-book/ts-nextbook-app"
+                href="https://github.com/moseskim/ts-nextbook-app"
                 variant="mediumLarge"
                 color="white"
               >
-                こちら
+                이쪽
               </Text>
-              のGithubからダウンロードできます。
+              의 Github에서 다운로드 할 수 있습니다.
             </Text>
             <Text as="p" color="white" variant="mediumLarge">
-              このアプリはTypeScript/Next.jsで作成されており、バックエンドのモックAPIはjson-serverが使用されています。
+              이 애플리케이션은 TypeScript/Next.js로 작성되어 있으며, 백엔드의 목 API는 json-server가 사용되고 있습니다.
             </Text>
           </Box>
         </Flex>
@@ -87,19 +85,19 @@ const HomePage: NextPage<HomePageProps> = ({
         >
           <Box marginBottom={3}>
             <Text as="h2" variant="large">
-              トップス
+              의류
             </Text>
             {renderProductCardCarousel(clothesProducts)}
           </Box>
           <Box marginBottom={3}>
             <Text as="h2" variant="large">
-              本
+              책
             </Text>
             {renderProductCardCarousel(bookProducts)}
           </Box>
           <Box>
             <Text as="h2" variant="large">
-              シューズ
+              신발
             </Text>
             {renderProductCardCarousel(shoesProducts)}
           </Box>
@@ -113,8 +111,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const context: ApiContext = {
     apiRootUrl: process.env.API_BASE_URL || 'http://localhost:5000',
   }
-  // 各商品のトップ6個を取得し、静的ページを作成
-  // 60秒でrevalidateな状態にし、静的ページを更新する
+  // 각 상품의 톱 6개를 얻어, 정적 페이지를 작성
+  // 60초 동안 revalidate 상태로 하고, 정적 페이지를 업데이트한다
   const [clothesProducts, bookProducts, shoesProducts] = await Promise.all([
     getAllProducts(context, { category: 'clothes', limit: 6, page: 1 }),
     getAllProducts(context, { category: 'book', limit: 6, page: 1 }),

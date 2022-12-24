@@ -19,16 +19,16 @@ export type ProductFormData = {
 
 interface ProductFormProps {
   /**
-   * 出品ボタンを押した時のイベントハンドラ
+   * 게시 버튼을 클릭했을 때의 이벤트 핸들러
    */
   onProductSave?: (data: ProductFormData) => void
 }
 
 /**
- * 商品投稿フォーム
+ * 상품 게시폼
  */
 const ProductForm = ({ onProductSave }: ProductFormProps) => {
-  // React Hook Formの使用
+  // React Hook Form 사용
   const {
     register,
     handleSubmit,
@@ -44,10 +44,10 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
       <Box marginBottom={3}>
         <Box marginBottom={2}>
           <Text as="label" variant="mediumLarge" fontWeight="bold">
-            商品の写真
+            상품 사진
           </Text>
         </Box>
-        {/* 商品画像の入力 */}
+        {/* 상품 이미지 입력 */}
         <Controller
           control={control}
           name="image"
@@ -71,39 +71,39 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
       <Box marginBottom={3}>
         <Box marginBottom={2}>
           <Text as="label" variant="mediumLarge" fontWeight="bold">
-            商品情報
+            상품 정보
           </Text>
         </Box>
         <Box marginBottom={1}>
           <Text as="label" variant="medium">
             タイトル
           </Text>
-          {/* 商品タイトルの入力 */}
+          {/* 상품 타이틀 입력 */}
           <Input
             {...register('title', { required: true })}
             name="title"
             type="text"
-            placeholder="商品のタイトル"
+            placeholder="상품 제목"
             hasError={!!errors.title}
           />
           {errors.title && (
             <Text color="danger" variant="small" paddingLeft={1}>
-              タイトルの入力は必須です
+              제목 입력은 필수입니다
             </Text>
           )}
         </Box>
         <Box marginBottom={1}>
           <Text as="label" variant="medium">
-            概要
+            개요
           </Text>
-          {/* 商品概要の入力 */}
+          {/* 상품 개요 입력 */}
           <Controller
             control={control}
             name="description"
             rules={{ required: true }}
             render={({ field: { onChange, value }, fieldState: { error } }) => (
               <TextArea
-                placeholder="最高の商品です！"
+                placeholder="최고의 상품입니다!"
                 hasError={!!error}
                 onChange={onChange}
               >
@@ -113,15 +113,15 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
           />
           {errors.description && (
             <Text color="danger" variant="small" paddingLeft={1}>
-              概要の入力は必須です
+              개요 입력은 필수입니다
             </Text>
           )}
         </Box>
         <Box marginBottom={1}>
           <Text as="label" variant="medium">
-            カテゴリ
+            카테고리
           </Text>
-          {/* カテゴリのドロップダウン */}
+          {/* 카테고리 드롭다운 */}
           <Controller
             control={control}
             name="category"
@@ -130,28 +130,28 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
             render={({ field: { onChange, value }, fieldState: { error } }) => (
               <Dropdown
                 options={[
-                  { value: 'shoes', label: 'シューズ' },
-                  { value: 'clothes', label: 'トップス' },
-                  { value: 'book', label: '本' },
+                  { value: 'shoes', label: '슈즈' },
+                  { value: 'clothes', label: '의류' },
+                  { value: 'book', label: '' },
                 ]}
                 hasError={!!error}
                 value={value}
-                placeholder="カテゴリを選択して下さい"
+                placeholder="카테고리를 선택해 주십시오"
                 onChange={(v) => onChange(v?.value)}
               />
             )}
           />
           {errors.category && (
             <Text color="danger" variant="small" paddingLeft={1}>
-              カテゴリの選択は必須です
+              카테고리 선택은 필수입니다
             </Text>
           )}
         </Box>
         <Box marginBottom={1}>
           <Text as="label" variant="medium">
-            商品の状態
+            상품 상태
           </Text>
-          {/* 商品の状態のドロップダウン */}
+          {/* 상품 상태 드롭다운 */}
           <Controller
             control={control}
             name="condition"
@@ -160,8 +160,8 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
             render={({ field: { onChange, value }, fieldState: { error } }) => (
               <Dropdown
                 options={[
-                  { value: 'used', label: '中古' },
-                  { value: 'new', label: '新品' },
+                  { value: 'used', label: '중고' },
+                  { value: 'new', label: '신품' },
                 ]}
                 hasError={!!error}
                 value={value ?? 'used'}
@@ -172,15 +172,15 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
           />
           {errors.condition && (
             <Text color="danger" variant="small" paddingLeft={1}>
-              商品の状態の入力は必須です
+              상품 상태 입력은 필수입니다
             </Text>
           )}
         </Box>
         <Box>
           <Text as="label" variant="medium">
-            価格 (円)
+            가격(원)
           </Text>
-          {/* 価格の入力 */}
+          {/* 가격 입력 */}
           <Input
             {...register('price', { required: true })}
             name="price"
@@ -190,13 +190,13 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
           />
           {errors.price && (
             <Text color="danger" variant="small" paddingLeft={1}>
-              価格の入力は必須です
+              가격의 입력은 필수입니다
             </Text>
           )}
         </Box>
       </Box>
       <Button width="100%" type="submit">
-        出品
+        출품
       </Button>
     </form>
   )

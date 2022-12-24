@@ -5,16 +5,16 @@ import { AuthContextProvider } from 'contexts/AuthContext'
 import { theme } from 'themes'
 import type { User, Product } from 'types'
 
-// ShoppingCartContextのモック
+// ShoppingCartContext의 목
 jest.mock('contexts/ShoppingCartContext')
 // eslint-disable-next-line import/order
 import { useShoppingCartContext } from 'contexts/ShoppingCartContext'
-// オリジナルのShoppingCartContextProviderを取得
+// 오리지널 ShoppingCartContextProvider를 취득
 const { ShoppingCartContextProvider } = jest.requireActual(
   'contexts/ShoppingCartContext',
 )
 
-// ダミーユーザー
+// 더미 사용자
 const authUser: User = {
   id: 1,
   username: 'dummy',
@@ -24,7 +24,7 @@ const authUser: User = {
   description: '',
 }
 
-// ダミー商品
+// 더미 상품
 const product: Product = {
   id: 1,
   category: 'book',
@@ -42,7 +42,7 @@ describe('Header', () => {
   const useShoppingCartContextMock =
     useShoppingCartContext as jest.MockedFunction<typeof useShoppingCartContext>
 
-  it('カートに商品が存在する', async () => {
+  it('카트에 상품이 존재한다', async () => {
     useShoppingCartContextMock.mockReturnValue({
       cart: [product],
       // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -64,14 +64,14 @@ describe('Header', () => {
       </ThemeProvider>,
     )
 
-    // カートに入っている（バッジが出てる）
+    // 카트에 들어있다(배지가 표시된다)
     expect(screen.getAllByTestId('badge-wrapper').length).toBeGreaterThan(0)
 
     renderResult.unmount()
     useShoppingCartContextMock.mockReset()
   })
 
-  it('未サインイン', async () => {
+  it('미 로그인', async () => {
     useShoppingCartContextMock.mockReturnValue({
       cart: [],
       // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -90,10 +90,10 @@ describe('Header', () => {
       </ThemeProvider>,
     )
 
-    // サインインしていない
+    // 로그인 하지 않았음
     expect(screen.queryByTestId('profile-shape-image')).toBeNull()
 
-    // カートが空
+    // 카트가 비어 있음
     expect(screen.queryByTestId('badge-wrapper')).toBeNull()
 
     renderResult.unmount()

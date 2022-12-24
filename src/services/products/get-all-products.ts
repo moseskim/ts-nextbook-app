@@ -3,40 +3,40 @@ import { fetcher } from 'utils'
 
 export type GetAllProductsParams = {
   /**
-   * 商品カテゴリ
+   * 상품 카테고리
    */
   category?: Category
   /**
-   * 商品状態
+   * 상품 상태
    */
   conditions?: Condition[]
   /**
-   * 所有するユーザーID
+   * 소유한 사용자 ID
    */
   userId?: number
   /**
-   * ソートするキー
+   * 정렬할 키
    */
   sort?: keyof Omit<Product, 'owner'>
   /**
-   * 昇順or降順
+   * 오름차순 또는 내림차순
    */
   order?: 'asc' | 'desc'
   /**
-   * 取得数
+   * 취득 수
    */
   limit?: number
   /**
-   * ページ数
+   * 페이지 수
    */
   page?: number
 }
 
 /**
- * プロダクトAPI（一覧取得）
- * @param context APIコンテキスト
- * @param params 検索条件
- * @returns 商品一覧
+ * 제품 API(목록 취득)
+ * @param context API 컨텍스트
+ * @param params 검색 조건
+ * @returns 상품 목록
  */
 // eslint-disable-next-line complexity
 const getAllProducts = async (

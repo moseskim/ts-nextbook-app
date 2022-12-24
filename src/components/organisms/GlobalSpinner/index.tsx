@@ -16,7 +16,7 @@ const GlobalSpinnerWrapper = styled.div`
 `
 
 /**
- * グローバルスピナー
+ * 글로벌 스피너
  */
 const GlobalSpinner = () => {
   const isGlobalSpinnerOn = useGlobalSpinnerContext()

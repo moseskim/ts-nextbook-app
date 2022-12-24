@@ -11,16 +11,16 @@ export type SigninFormData = {
 
 interface SigninFormProps {
   /**
-   * サインインボタンを押した時のイベントハンドラ
+   * 로그인 버튼을 클릭했을 때의 이벤트 핸들러
    */
   onSignin?: (username: string, password: string) => void
 }
 
 /**
- * サインインフォーム
+ * 로그인폼
  */
 const SigninForm = ({ onSignin }: SigninFormProps) => {
-  // React Hook Formの使用
+  // React Hook Form 사용
   const {
     register,
     handleSubmit,
@@ -35,37 +35,37 @@ const SigninForm = ({ onSignin }: SigninFormProps) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Box marginBottom={1}>
-        {/* サインインユーザー名の入力 */}
+        {/* 로그인 사용자명 입력 */}
         <Input
           {...register('username', { required: true })}
           name="username"
           type="text"
-          placeholder="ユーザ名"
+          placeholder="사용자명"
           hasError={!!errors.username}
         />
         {errors.username && (
           <Text color="danger" variant="small" paddingLeft={1}>
-            ユーザ名は必須です
+            사용자명은 필수입니다
           </Text>
         )}
       </Box>
       <Box marginBottom={2}>
-        {/* サインインパスワードの入力 */}
+        {/* 로그인 비밀번호 입력 */}
         <Input
           {...register('password', { required: true })}
           name="password"
           type="password"
-          placeholder="パスワード"
+          placeholder="비밀번호"
           hasError={!!errors.password}
         />
         {errors.password && (
           <Text color="danger" variant="small" paddingLeft={1}>
-            パスワードは必須です
+            비밀번호는 필수입니다
           </Text>
         )}
       </Box>
       <Button width="100%" type="submit">
-        サインイン
+        로그인
       </Button>
     </form>
   )

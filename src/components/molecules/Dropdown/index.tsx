@@ -8,7 +8,7 @@ const DropdownRoot = styled.div`
   height: 38px;
 `
 
-// ドロップダウン外観
+// 드롭다운 형태
 const DropdownControl = styled.div<{ hasError?: boolean }>`
   position: relative;
   overflow: hidden;
@@ -28,7 +28,7 @@ const DropdownValue = styled.div`
   color: ${({ theme }) => theme.colors.text};
 `
 
-// ドロップダウンプレースホルダー
+// 드롭다운 플레이스홀더
 const DropdownPlaceholder = styled.div`
   color: #757575;
   font-size: ${({ theme }) => theme.fontSizes[1]};
@@ -36,7 +36,7 @@ const DropdownPlaceholder = styled.div`
   line-height: 20px;
 `
 
-// ドロップダウンの矢印の外観
+// 드롭다운 화살표의 형태
 const DropdownArrow = styled.div<{ isOpen?: boolean }>`
   border-color: ${({ isOpen }) =>
     isOpen
@@ -100,27 +100,27 @@ export interface DropdownItem {
 
 interface DropdownProps {
   /**
-   * ドロップダウンの選択肢
+   * 드롭다운 선택지
    */
   options: DropdownItem[]
   /**
-   * ドロップダウンの値
+   * 드롭다운 값
    */
   value?: string | number
   /**
-   * <input />のname属性
+   * <input />의 name 속성
    */
   name?: string
   /**
-   * プレースホルダー
+   * 플레이스홀더
    */
   placeholder?: string
   /**
-   * バリデーションエラーフラグ
+   * 변형 에러 플래그
    */
   hasError?: boolean
   /**
-   * 値が変化した時のイベントハンドラ
+   * 값이 변화했을 때의 이벤트 핸들러
    */
   onChange?: (selected?: DropdownItem) => void
 }

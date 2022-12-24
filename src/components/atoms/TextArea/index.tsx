@@ -4,15 +4,15 @@ import styled from 'styled-components'
 export interface TextAreaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   /**
-   * 最小行数
+   * 최소 행 수
    */
   minRows?: number
   /**
-   * 最大行数
+   * 최대 행 수
    */
   maxRows?: number
   /**
-   * バリデーションエラーフラグ
+   * 변형 에러 플래그
    */
   hasError?: boolean
 }
@@ -39,7 +39,7 @@ const StyledTextArea = styled.textarea<{ hasError?: boolean }>`
 `
 
 /**
- * テキストエリア
+ * 텍스트 영역
  */
 const TextArea = (props: TextAreaProps) => {
   const {
@@ -63,9 +63,9 @@ const TextArea = (props: TextAreaProps) => {
       const textareaLineHeight = 24
       const previousRows = e.target.rows
 
-      e.target.rows = minRows // 行数のリセット
+      e.target.rows = minRows // 행 수 초기화
 
-      // 現在の行数
+      // 현재 행 수
       const currentRows = Math.floor(e.target.scrollHeight / textareaLineHeight)
 
       if (currentRows === previousRows) {
@@ -77,7 +77,7 @@ const TextArea = (props: TextAreaProps) => {
         e.target.scrollTop = e.target.scrollHeight
       }
 
-      // 最大を超えないように行数をセット
+      // 최대를 넘지 않도록 행 수 초기화
       setTextareaRows(currentRows < maxRows ? currentRows : maxRows)
       onChange && onChange(e)
     },

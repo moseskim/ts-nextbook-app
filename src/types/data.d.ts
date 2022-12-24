@@ -1,9 +1,9 @@
-// 商品カテゴリ
+// 상품 카테고리
 export type Category = 'shoes' | 'clothes' | 'book'
-// 商品の状態
+// 상품 상태
 export type Condition = 'new' | 'used'
 
-// ユーザー
+// 사용자
 export type User = {
   id: number
   username: string
@@ -13,7 +13,7 @@ export type User = {
   description: string
 }
 
-// 商品
+// 상품
 export type Product = {
   id: number
   category: Category
@@ -26,7 +26,7 @@ export type Product = {
   owner: User
 }
 
-// APIコンテキスト
+// API 컨텍스트
 export type ApiContext = {
   apiRootUrl: string
 }

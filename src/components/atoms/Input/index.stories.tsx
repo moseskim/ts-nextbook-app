@@ -6,7 +6,7 @@ export default {
   argTypes: {
     placeholder: {
       control: { type: 'text' },
-      description: 'プレースホルダー',
+      description: '플레이스홀더',
       table: {
         type: { summary: 'string' },
       },
@@ -14,7 +14,7 @@ export default {
     hasBorder: {
       control: { type: 'boolean' },
       defaultValue: true,
-      description: 'ボーダーフラグ',
+      description: '보더 플래그',
       table: {
         type: { summary: 'boolean' },
       },
@@ -22,7 +22,7 @@ export default {
     hasError: {
       control: { type: 'boolean' },
       defaultValue: false,
-      description: 'バリデーションエラーフラグ',
+      description: '배리에이션 에러 플래그',
       table: {
         type: { summary: 'boolean' },
       },

@@ -7,7 +7,7 @@ interface RectLoaderProps extends IContentLoaderProps {
 }
 
 /**
- * レクトローダー
+ * RectLoader
  */
 const RectLoader = ({ width, height, ...rest }: RectLoaderProps) => (
   <ContentLoader

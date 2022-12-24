@@ -9,14 +9,14 @@ export default {
   argTypes: {
     height: {
       control: { type: 'number' },
-      description: '縦幅',
+      description: '세로폭',
       table: {
         type: { summary: 'number' },
       },
     },
     width: {
       control: { type: 'number' },
-      description: '横幅',
+      description: '가로폭',
       table: {
         type: { summary: 'number' },
       },
@@ -24,7 +24,7 @@ export default {
     hasError: {
       control: { type: 'boolean' },
       defaultValue: false,
-      description: 'バリデーションエラーフラグ',
+      description: '변형 에러 플래그',
       table: {
         type: { summary: 'boolean' },
       },
@@ -32,20 +32,20 @@ export default {
     acceptedFileTypes: {
       options: {
         control: { type: 'array' },
-        description: '受け付けるファイルタイプ',
+        description: '받은 파일 타입',
         table: {
           type: { summary: 'array' },
         },
       },
     },
     onDrop: {
-      description: 'ファイルがドロップ入力された時のイベントハンドラ',
+      description: '파일이 드롭 입력되었을 때의 이벤트 핸들러',
       table: {
         type: { summary: 'function' },
       },
     },
     onChange: {
-      description: 'ファイルが入力された時のイベントハンドラ',
+      description: '파일이 입력되었을 때의 이벤트 핸들러',
       table: {
         type: { summary: 'function' },
       },
@@ -83,10 +83,10 @@ const Template: ComponentStory<typeof Dropzone> = (args) => {
         <Dropzone {...args} value={files} onDrop={handleDrop} />
       </Box>
       <Box marginBottom={1}>
-        <Button onClick={fetchData}>画像を追加</Button>
+        <Button onClick={fetchData}>이미지를 추가</Button>
       </Box>
       <Box marginBottom={2}>
-        <Button onClick={clearImages}>全ての画像をクリア</Button>
+        <Button onClick={clearImages}>모든 이미지를 클리어</Button>
       </Box>
       <Box>
         {files.map((f, i) => (

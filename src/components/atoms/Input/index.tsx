@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 /**
- * テキストインプット
+ * 텍스트 입력
  */
 const Input = styled.input<{ hasError?: boolean; hasBorder?: boolean }>`
   color: ${({ theme }) => theme.colors.inputText};

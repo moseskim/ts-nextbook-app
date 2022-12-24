@@ -9,7 +9,7 @@ const ImageWithShape = styled(Image)<{ shape?: ImageShape }>`
 `
 
 /**
- * シェイプイメージ
+ * 셰이프 이미지
  */
 const ShapeImage = (props: ShapeImageProps) => {
   const { shape, ...imageProps } = props

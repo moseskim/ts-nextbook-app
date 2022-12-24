@@ -8,14 +8,14 @@ export default {
     size: {
       control: { type: 'number' },
       defaultValue: 50,
-      description: 'サイズ',
+      description: '크기',
       table: {
         type: { summary: 'number' },
       },
     },
     strokeWidth: {
       control: { type: 'number' },
-      description: '先の太さ',
+      description: '선 폭',
       defaultValue: 4,
       table: {
         type: { summary: 'number' },
@@ -24,7 +24,7 @@ export default {
     isAutoCentering: {
       control: { type: 'boolean' },
       defaultValue: false,
-      description: 'センタリングフラグ',
+      description: '센터링 플래그',
       table: {
         type: { summary: 'boolean' },
       },

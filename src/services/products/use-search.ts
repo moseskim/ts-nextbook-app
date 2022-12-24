@@ -3,51 +3,51 @@ import type { ApiContext, Category, Condition, Product } from 'types'
 
 export type UseSearchProps = {
   /**
-   * 商品カテゴリ
+   * 상품 카테고리
    */
   category?: Category
   /**
-   * 商品状態
+   * 상품 상태
    */
   conditions?: Condition[]
   /**
-   * 所有するユーザーID
+   * 소유한 사용자 ID
    */
   userId?: number
   /**
-   * ソートするキー
+   * 정렬할 키
    */
   sort?: keyof Omit<Product, 'owner'>
   /**
-   * 昇順or降順
+   * 오름차순 또는 내림차순
    */
   order?: 'asc' | 'desc'
   /**
-   * 初期状態
+   * 초기 상태
    */
   initial?: Product[]
 }
 
 export type UseSearch = {
   /**
-   * 検索にヒットした商品リスト
+   * 검색에 일치한 상품 리스트
    */
   products: Product[]
   /**
-   * ロードフラグ
+   * 로드 플래그
    */
   isLoading: boolean
   /**
-   * エラーフラグ
+   * 에러 플래그
    */
   isError: boolean
 }
 
 /**
- * プロダクトAPI（一覧取得）のカスタムフック
- * @param context APIコンテキスト
- * @param params 検索条件
- * @returns 商品一覧とAPI呼び出しの状態
+ * 제품 API(목록 취득)의 커스텀훅
+ * @param context API 컨텍스트
+ * @param params 검색 조건
+ * @returns 상품 목록과 API 호출 상태
  */
 const useSearch = (
   context: ApiContext,

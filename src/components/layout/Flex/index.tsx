@@ -30,8 +30,8 @@ type FlexProps = BoxProps & {
 }
 
 /**
- * Flexコンポーネント
- * flexboxの実現に利用する
+ * Flex 컴포넌트
+ * flexbox 구현에 사용한다
  */
 const Flex = styled(Box)<FlexProps>`
   ${(props) => toPropValue('align-items', props.alignItems, props.theme)}

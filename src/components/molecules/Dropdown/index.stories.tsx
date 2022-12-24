@@ -6,7 +6,7 @@ export default {
   argTypes: {
     options: {
       control: { type: 'array' },
-      description: 'ドロップダウンの選択肢',
+      description: '드롭다운 선택지',
       table: {
         type: { summary: 'array' },
       },
@@ -14,27 +14,27 @@ export default {
     hasError: {
       control: { type: 'boolean' },
       defaultValue: false,
-      description: 'バリデーションエラーフラグ',
+      description: '변형 에러 플래그',
       table: {
         type: { summary: 'boolean' },
       },
     },
     placeholder: {
       control: { type: 'text' },
-      description: 'プレースホルダー',
+      description: '플레이스홀더',
       table: {
         type: { summary: 'string' },
       },
     },
     value: {
       control: { type: 'text' },
-      description: 'ドロップダウンの値',
+      description: '드롭다운 값',
       table: {
         type: { summary: 'string' },
       },
     },
     onChange: {
-      description: '値が変化した時のイベントハンドラ',
+      description: '값이 변화했을 때의 이벤트 핸들러',
       table: {
         type: { summary: 'function' },
       },

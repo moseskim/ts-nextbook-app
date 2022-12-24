@@ -3,7 +3,7 @@
 import { theme } from 'themes'
 import type { ResponsiveProp, Responsive } from 'types'
 
-// Themeの型
+// Theme의 타입
 export type AppTheme = typeof theme
 
 type SpaceThemeKeys = keyof typeof theme.space
@@ -12,27 +12,27 @@ type FontSizeThemeKeys = keyof typeof theme.fontSizes
 type LetterSpacingThemeKeys = keyof typeof theme.letterSpacings
 type LineHeightThemeKeys = keyof typeof theme.lineHeights
 
-// 各Themeのキーの型
+// 각 Theme의 키의 타입
 export type Space = SpaceThemeKeys | (string & {})
 export type Color = ColorThemeKeys | (string & {})
 export type FontSize = FontSizeThemeKeys | (string & {})
 export type LetterSpacing = LetterSpacingThemeKeys | (string & {})
 export type LineHeight = LineHeightThemeKeys | (string & {})
 
-// ブレイクポイント
+// 브레이크 포인트
 const BREAKPOINTS: { [key: string]: string } = {
-  sm: '640px', // 640px以上
-  md: '768px', // 768px以上
-  lg: '1024px', // 1024px以上
-  xl: '1280px', // 1280px以上
+  sm: '640px', // 640px 이상
+  md: '768px', // 768px 이상
+  lg: '1024px', // 1024px 이상
+  xl: '1280px', // 1280px 이상
 }
 
 /**
- * Responsive型をCSSプロパティとその値に変換
- * @param propKey CSSプロパティ
- * @param prop Responsive型
+ * Responsive 타입을 CSS 속성과 그 값으로 변환
+ * @param propKey CSS 속성
+ * @param prop Responsive 타입
  * @param theme AppTheme
- * @returns CSSプロパティとその値 (ex. background-color: white;)
+ * @returns CSS 속성과 그 값(ex. background-color: white;)
  */
 export function toPropValue<T>(
   propKey: string,
@@ -45,7 +45,7 @@ export function toPropValue<T>(
     const result = []
     for (const responsiveKey in prop) {
       if (responsiveKey === 'base') {
-        // デフォルトのスタイル
+        // 기본 스타일
         result.push(
           `${propKey}: ${toThemeValueIfNeeded(
             propKey,
@@ -59,7 +59,7 @@ export function toPropValue<T>(
         responsiveKey === 'lg' ||
         responsiveKey === 'xl'
       ) {
-        // メディアクエリでのスタイル
+        // 미비어 쿼리의 스타일
         const breakpoint = BREAKPOINTS[responsiveKey]
         const style = `${propKey}: ${toThemeValueIfNeeded(
           propKey,
@@ -93,11 +93,11 @@ const LINE_SPACING_KEYS = new Set(['letter-spacing'])
 const LINE_HEIGHT_KEYS = new Set(['line-height'])
 
 /**
- * Themeに指定されたCSSプロパティの値に変換
- * @param propKey CSSプロパティ
- * @param value CSSプロパティの値
+ * Theme에 지정된 CSS 속성값으로 변환
+ * @param propKey CSS 속성
+ * @param value CSS 속성값
  * @param theme AppTheme
- * @returns CSSプロパティの値
+ * @returns CSS 속성값
  */
 function toThemeValueIfNeeded<T>(propKey: string, value: T, theme?: AppTheme) {
   if (

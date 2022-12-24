@@ -8,8 +8,8 @@ export default {
       options: ['primary', 'secondary'],
       control: { type: 'radio' },
       defaultValue: 'primary',
-      // docsに表示する内容を設定
-      description: 'ボタンバリアント',
+      // docs에 표시할 내용을 설정
+      description: '버튼 변형',
       table: {
         type: { summary: 'primary | secondary' },
         defaultValue: { summary: 'primary' },
@@ -18,7 +18,7 @@ export default {
     children: {
       control: { type: 'text' },
       defaultValue: 'Button',
-      description: 'ボタンテキスト',
+      description: '버튼 텍스트',
       table: {
         type: { summary: 'string' },
       },
@@ -26,27 +26,27 @@ export default {
     disabled: {
       control: { type: 'boolean' },
       defaultValue: false,
-      description: 'Disabledフラグ',
+      description: 'Disabled 플래그',
       table: {
         type: { summary: 'boolean' },
       },
     },
     width: {
       control: { type: 'number' },
-      description: 'ボタンの横幅',
+      description: '버튼 세로폭',
       table: {
         type: { summary: 'number' },
       },
     },
     height: {
       control: { type: 'number' },
-      description: 'ボタンの縦幅',
+      description: '버튼 가로폭',
       table: {
         type: { summary: 'number' },
       },
     },
     onClick: {
-      description: 'onClickイベントハンドラ',
+      description: 'onClick 이벤트 핸들러',
       table: {
         type: { summary: 'function' },
       },
@@ -56,14 +56,14 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 
-// Primaryボタン
+// Primary 버튼
 export const Primary = Template.bind({})
 Primary.args = { variant: 'primary', children: 'Primary Button' }
 
-// Secondaryボタン
+// Secondary 버튼
 export const Secondary = Template.bind({})
 Secondary.args = { variant: 'secondary', children: 'Secondary Button' }
 
-// Disabledボタン
+// Disabled 버튼
 export const Disabled = Template.bind({})
 Disabled.args = { disabled: true, children: 'Disabled Button' }

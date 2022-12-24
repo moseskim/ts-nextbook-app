@@ -4,17 +4,17 @@ import type { Product } from 'types'
 
 interface AddToCartButtonContainerProps {
   /**
-   * 追加される商品
+   * 추가될 상품
    */
   product: Product
   /**
-   * 追加ボタンを押した時のイベントハンドラ
+   * 추가 버튼을 클릭했을 때의 이벤트 핸들러
    */
   onAddToCartButtonClick?: (product: Product) => void
 }
 
 /**
- * カート追加ボタンコンテナ
+ * 카트 추가 버튼 컨테이너
  */
 const AddToCartButtonContainer = ({
   product,
@@ -25,7 +25,7 @@ const AddToCartButtonContainer = ({
     const productId = Number(product.id)
     const result = cart.findIndex((v) => v.id === productId)
 
-    // 同じ商品がカートに存在しない場合はカートに追加する
+    // 같은 상품이 카트에 없으면 카트에 추가한다
     if (result === -1) {
       addProductToCart(product)
     }
@@ -39,7 +39,7 @@ const AddToCartButtonContainer = ({
       height="66px"
       onClick={handleAddToCartButtonClick}
     >
-      カートに追加
+      카트에 추가
     </Button>
   )
 }

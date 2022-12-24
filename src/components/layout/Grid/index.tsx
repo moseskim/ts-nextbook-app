@@ -20,8 +20,8 @@ type GridProps = BoxProps & {
 }
 
 /**
- * Gridコンポーネント
- * gridレイアウトの実現に利用する
+ * Grid 컴포넌트
+ * grid 레이아웃 구현에 사용한다
  */
 const Grid = styled(Box)<GridProps>`
   ${(props) => toPropValue('grid-gap', props.gridGap, props.theme)}

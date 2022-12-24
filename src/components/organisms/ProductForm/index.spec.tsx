@@ -12,11 +12,11 @@ import { theme } from 'themes'
 describe('ProductForm', () => {
   let renderResult: RenderResult
   let handleProductSave: jest.Mock
-  // スタブ
+  // 스텁
   global.URL.createObjectURL = () => 'https://test.com'
 
   beforeEach(() => {
-    // ダミー関数
+    // 더미 함수
     handleProductSave = jest.fn()
     renderResult = render(
       <ThemeProvider theme={theme}>
@@ -29,10 +29,10 @@ describe('ProductForm', () => {
     renderResult.unmount()
   })
 
-  it('フォーム入力後、onProductSaveが呼ばれる', async () => {
-    // DOMが更新される事を保証、React Hook FormのhandleSubmitが呼ばれるまで待つ
+  it('폼 입력 후, onProductSave가 호출된다', async () => {
+    // DOM이 업데이트되는 것을 보증, React Hook Form의 handleSubmit이 호출될 때까지 기다린다
     await act(async () => {
-      // 商品画像を入力
+      // 상품 이미지를 입력
       const element = await screen.findByTestId('dropzone')
       fireEvent.drop(element, {
         dataTransfer: {
@@ -42,46 +42,46 @@ describe('ProductForm', () => {
         },
       })
 
-      // 商品のタイトルを入力
+      // 상품 제목을 입력
       const inputUsernameNode = screen.getByPlaceholderText(
-        /商品のタイトル/,
+        /상품 제목/,
       ) as HTMLInputElement
-      fireEvent.change(inputUsernameNode, { target: { value: '商品' } })
+      fireEvent.change(inputUsernameNode, { target: { value: '상품' } })
 
-      // 商品情報を入力
+      // 상품 정보를 입력
       const inputPasswordNode = screen.getByPlaceholderText(
-        /最高の商品です/,
+        / 최고의 상품입니다/,
       ) as HTMLInputElement
-      fireEvent.change(inputPasswordNode, { target: { value: 'テストテスト' } })
+      fireEvent.change(inputPasswordNode, { target: { value: '테스트테스트' } })
 
-      // 価格を入力
+      // 가격을 입력
       const inputPriceNode = screen.getByPlaceholderText(
         /100/,
       ) as HTMLInputElement
       fireEvent.change(inputPriceNode, { target: { value: '100' } })
 
-      // 出品ボタンをクリック
-      fireEvent.click(screen.getByText('出品'))
+      // 출품 버튼을 클릭한다
+      fireEvent.click(screen.getByText('출품'))
     })
 
-    // handleProductSaveが呼ばれていることを確認
+    // handleProductSave가 호출되어 있는 것을 확인
     expect(handleProductSave).toHaveBeenCalledTimes(1)
   })
 
-  it('商品タイトル入力だけでは、バリデーションエラーでonProductSaveが呼ばれない', async () => {
-    // DOMが更新される事を保証、React Hook FormのhandleSubmitが呼ばれるまで待つ
+  it('상품 제목 입력만으로는 변형 에러에 의한 onProductSave가 호출되지 않는다', async () => {
+    // DOM이 업데이트되는 것을 보증, React Hook Form의 handleSubmit이 호출될 때까지 기다린다
     await act(async () => {
-      // 商品のタイトルを入力
+      // 상품 제목을 입력
       const inputUsernameNode = screen.getByPlaceholderText(
-        /商品のタイトル/,
+        /상품 제목/,
       ) as HTMLInputElement
-      fireEvent.change(inputUsernameNode, { target: { value: '商品' } })
+      fireEvent.change(inputUsernameNode, { target: { value: '상품' } })
 
-      // 出品ボタンをクリック
-      fireEvent.click(screen.getByText('出品'))
+      // 출품 버튼을 클릭
+      fireEvent.click(screen.getByText('출품'))
     })
 
-    // handleProductSaveが呼ばれていないことを確認
+    // handleProductSave가 호출되지 않은 것을 확인
     expect(handleProductSave).toHaveBeenCalledTimes(0)
   })
 })

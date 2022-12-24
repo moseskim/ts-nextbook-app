@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-// バッジの円形
+// 배지 원형
 const BadgeWrapper = styled.div<{ backgroundColor: string }>`
   border-radius: 20px;
   height: 20px;
@@ -11,7 +11,7 @@ const BadgeWrapper = styled.div<{ backgroundColor: string }>`
   background-color: ${({ backgroundColor }) => backgroundColor};
 `
 
-// バッジ内のテキスト
+// 배지 내부 텍스트
 const BadgeText = styled.p`
   color: white;
   font-size: 11px;
@@ -20,17 +20,17 @@ const BadgeText = styled.p`
 
 interface BadgeProps {
   /**
-   * バッジのテキスト
+   * 배지 내부 텍스트
    */
   content: string
   /**
-   * バッジの色
+   * 배지 색상
    */
   backgroundColor: string
 }
 
 /**
- * バッジ
+ * 배지
  */
 const Badge = ({ content, backgroundColor }: BadgeProps) => {
   return (

@@ -13,7 +13,7 @@ const Anchor = styled(Text)`
 `
 
 /**
- * フッター
+ * 푸터
  */
 const Footer = () => {
   return (
@@ -26,17 +26,17 @@ const Footer = () => {
           <nav>
             <Box marginBottom={2}>
               <Link href="/" passHref>
-                <Anchor as="a">トップ</Anchor>
+                <Anchor as="a">톱</Anchor>
               </Link>
             </Box>
             <Box marginBottom={2}>
               <Link href="/" passHref>
-                <Anchor as="a">採用</Anchor>
+                <Anchor as="a">채용</Anchor>
               </Link>
             </Box>
             <Box marginBottom={2}>
               <Link href="/" passHref>
-                <Anchor as="a">お知らせ</Anchor>
+                <Anchor as="a">알림</Anchor>
               </Link>
             </Box>
           </nav>
@@ -48,17 +48,17 @@ const Footer = () => {
           <nav>
             <Box marginBottom={2}>
               <Link href="/" passHref>
-                <Anchor as="a">利用規約</Anchor>
+                <Anchor as="a">사용 규약</Anchor>
               </Link>
             </Box>
             <Box marginBottom={2}>
               <Link href="/" passHref>
-                <Anchor as="a">プライバシーポリシー</Anchor>
+                <Anchor as="a">개인 정보 정책</Anchor>
               </Link>
             </Box>
             <Box marginBottom={2}>
               <Link href="/" passHref>
-                <Anchor as="a">配送と返品</Anchor>
+                <Anchor as="a">배송 및 반품</Anchor>
               </Link>
             </Box>
           </nav>
@@ -67,7 +67,7 @@ const Footer = () => {
           <nav>
             <Anchor
               as="a"
-              href="https://github.com/gihyo-book/ts-nextbook-app"
+              href="https://github.com/moseskim/ts-nextbook-app"
               target="_blank"
             >
               <GitHubIcon size={22} />

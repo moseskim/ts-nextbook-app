@@ -20,29 +20,29 @@ const CloseBox = styled(Flex)`
 
 interface ImagePreviewProps {
   /**
-   * 画像URL
+   * 이미지 URL
    */
   src?: string
   /**
-   * 代替テキスト
+   * 대체 텍스트
    */
   alt?: string
   /**
-   * 縦幅
+   * 세로폭
    */
   height?: string
   /**
-   * 横幅
+   * 가로폭
    */
   width?: string
   /**
-   * 削除ボタンを押した時のイベントハンドラ
+   * 삭제 버튼을 클릭했을 떄의 이벤트 핸들러
    */
   onRemove?: (src: string) => void
 }
 
 /**
- * イメージプレビュー
+ * 이미지 미리보기
  */
 const ImagePreview = ({
   src,
@@ -51,7 +51,7 @@ const ImagePreview = ({
   width,
   onRemove,
 }: ImagePreviewProps) => {
-  // 閉じるボタンを押したらonRemoveを呼ぶ
+  // 닫기 버튼을 클릭하면 onRemove를 호출한다
   const handleCloseClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault()
     e.stopPropagation()

@@ -8,7 +8,7 @@ export default {
       options: ['normal', 'small'],
       control: { type: 'radio' },
       defaultValue: 'normal',
-      description: 'バリアント（表示スタイル）',
+      description: '변형(표지 스타일)',
       table: {
         type: { summary: 'normal | small' },
         defaultValue: { summary: 'normal' },
@@ -16,28 +16,28 @@ export default {
     },
     username: {
       control: { type: 'text' },
-      description: 'ユーザー名',
+      description: '사용자명',
       table: {
         type: { summary: 'string' },
       },
     },
     profileImageUrl: {
       control: { type: 'text' },
-      description: 'ユーザー画像URL',
+      description: '사용자 이미지 URL',
       table: {
         type: { summary: 'string' },
       },
     },
     numberOfProducts: {
       control: { type: 'number' },
-      description: 'ユーザーが所有する商品数',
+      description: '사용자 소유한 상품 수',
       table: {
         type: { summary: 'number' },
       },
     },
     description: {
       control: { type: 'text' },
-      description: 'ユーザーの説明',
+      description: '사용자 설명',
       table: {
         type: { summary: 'string' },
       },
@@ -52,17 +52,17 @@ const Template: ComponentStory<typeof UserProfile> = (args) => (
 export const Small = Template.bind({})
 Small.args = {
   variant: 'small',
-  username: 'テストユーザー',
+  username: '테스트 사용자',
   profileImageUrl: '/images/sample/1.jpg',
   numberOfProducts: 2000,
-  description: 'サンプルテキスト',
+  description: '샘플 텍스트',
 }
 
 export const Normal = Template.bind({})
 Normal.args = {
   variant: 'normal',
-  username: 'テストユーザー',
+  username: '테스트 사용자',
   profileImageUrl: '/images/sample/1.jpg',
   numberOfProducts: 2000,
-  description: 'サンプルテキスト',
+  description: '샘플 텍스트',
 }

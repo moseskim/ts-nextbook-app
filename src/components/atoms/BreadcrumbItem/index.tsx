@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 /**
- * パンくずリスト要素
+ * 빵 부스러기 리스트 요소
  */
 const BreadcrumbItem = styled.li`
   list-style: none;

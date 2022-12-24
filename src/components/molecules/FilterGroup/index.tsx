@@ -17,7 +17,7 @@ type FilterGroupProps = {
 }
 
 /**
- * フィルターグループ
+ * 필터 그롭
  */
 const FilterGroup = ({
   title,

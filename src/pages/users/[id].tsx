@@ -46,7 +46,7 @@ const UserPage: NextPage<UserPageProps> = ({
             <Breadcrumb>
               <BreadcrumbItem>
                 <Link href="/">
-                  <a>トップ</a>
+                  <a>톱</a>
                 </Link>
               </BreadcrumbItem>
               {user && <BreadcrumbItem>{user.username}</BreadcrumbItem>}
@@ -55,8 +55,8 @@ const UserPage: NextPage<UserPageProps> = ({
           <Box>
             <Box marginBottom={1}>
               {/*
-                ユーザープロファイルコンテナ
-                ユーザー情報を表示する。useUserで常に最新のデータを取得する。
+                사용자 프로파일 컨테이너
+                사용자 정보를 표시한다. useUser로 항상 최신 데이터를 얻는다.
               */}
               <UserProfileContainer userId={id} user={user} />
             </Box>
@@ -64,8 +64,8 @@ const UserPage: NextPage<UserPageProps> = ({
               <Separator />
             </Box>
             {/*
-              ユーザー商品カードリストコンテナ
-              ユーザーが所持する商品カードリストを表示する。useSearchで常に最新のデータを取得する。
+              사용자 상품 카드 리스트 컨테이너
+              사용자가 서유한 상품 카드 리스트를 표시한다. useSearch로 항상 최신 데이터를 얻는다.
             */}
             <UserProductCardListContainer userId={id} products={products} />
           </Box>
@@ -94,8 +94,8 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
     throw new Error('params is undefined')
   }
 
-  // ユーザー情報と ユーザーの所持する商品を取得し、静的ページを作成
-  // 10秒でrevalidateな状態にし、静的ページを更新する
+  // 사용자 정보와 사용자가 소유한 상품을 얻고, 정적 페이지를 생성한다
+  // 10초 동안 revalidate 상태로 하고, 정적 페이지를 업데이트한다
   const userId = Number(params.id)
   const [user, products] = await Promise.all([
     getUser(context, { id: userId }),

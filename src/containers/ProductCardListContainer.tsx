@@ -12,17 +12,17 @@ const context: ApiContext = {
 
 interface ProductCardListContainerProps {
   /**
-   * 検索クエリ - カテゴリ
+   * 검색 쿼리 - 카테고리
    */
   category?: Category
   /**
-   * 検索クエリ - 商品の状態
+   * 검색 쿼리 - 상품 상태
    */
   conditions?: Condition[]
 }
 
 /**
- * 商品カードリストコンテナ
+ * 상품 카드 리스트 컨테이너
  */
 const ProductCardListContainer = ({
   category,
@@ -35,7 +35,7 @@ const ProductCardListContainer = ({
 
   return (
     <ProductCardList>
-      {/* ロード中はレクトローダーを表示 */}
+      {/* 로드 중에는 RectLoader를 표시 */}
       {isLoading &&
         Array.from(Array(16), (_, k) => (
           <Box key={k}>
@@ -52,7 +52,7 @@ const ProductCardListContainer = ({
           <Box key={p.id}>
             <Link href={`/products/${p.id}`} passHref>
               <a>
-                {/* 商品カード */}
+                {/* 상품 카드 */}
                 <ProductCard
                   variant="listing"
                   title={p.title}

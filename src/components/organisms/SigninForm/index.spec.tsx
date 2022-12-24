@@ -14,7 +14,7 @@ describe('SigninForm', () => {
   let handleSignin: jest.Mock
 
   beforeEach(() => {
-    // ダミー関数
+    // 더미 함수
     handleSignin = jest.fn()
     renderResult = render(
       <ThemeProvider theme={theme}>
@@ -27,40 +27,40 @@ describe('SigninForm', () => {
     renderResult.unmount()
   })
 
-  it('ユーザ名とパスワード入力後、onSigninが呼ばれる', async () => {
-    // DOMが更新される事を保証、React Hook FormのhandleSubmitが呼ばれるまで待つ
+  it('사용자명과 비밀번호를 입력한 뒤, onSignin이 호출된다', async () => {
+    // DOM이 변경되는 것을 보증, React Hook Form의 handleSubmit이 호출될 때까지 대기한다
     await act(async () => {
-      // ユーザー名入力
+      // 사용자명 입력
       const inputUsernameNode = screen.getByPlaceholderText(
-        /ユーザ名/,
+        /사용자명/,
       ) as HTMLInputElement
       fireEvent.change(inputUsernameNode, { target: { value: 'user' } })
-      // パスワード入力
+      // 비밀번호 입력
       const inputPasswordNode = screen.getByPlaceholderText(
-        /パスワード/,
+        /비밀번호/,
       ) as HTMLInputElement
       fireEvent.change(inputPasswordNode, { target: { value: 'password' } })
-      // サインインボタンをクリック
-      fireEvent.click(screen.getByText('サインイン'))
+      // 로그인 버튼을 클릭
+      fireEvent.click(screen.getByText('로그인'))
     })
 
-    // handleSigninが呼ばれた事を確認
+    // handleSignin이 호출되지 않는 것을 확인
     expect(handleSignin).toHaveBeenCalledTimes(1)
   })
 
-  it('ユーザ名入力だけでは、バリデーションエラーでonSigninが呼ばれない', async () => {
-    // DOMが更新される事を保証、React Hook FormのhandleSubmitが呼ばれるまで待つ
+  it('사용자명 입력만으로는、변형 에러로 인한 onSignin이 호출되지 않는다', async () => {
+    // DOM기 업데이트되는 것을 보증, React Hook Form의 handleSubmit이 호출될 떄까지 대기한다
     await act(async () => {
-      // ユーザー名入力
+      // 사용자명 입력
       const inputUsernameNode = screen.getByPlaceholderText(
-        /ユーザ名/,
+        /사용자명/,
       ) as HTMLInputElement
       fireEvent.change(inputUsernameNode, { target: { value: 'user' } })
-      // サインインボタンをクリック
+      // 로그인 버튼을 클릭
       fireEvent.click(screen.getByText('サインイン'))
     })
 
-    // handleSigninが呼ばれてないこと事を確認
+    // handleSignin가 호출되지 않은 것을 확인
     expect(handleSignin).toHaveBeenCalledTimes(0)
   })
 })

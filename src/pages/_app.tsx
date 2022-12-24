@@ -10,7 +10,7 @@ import { theme } from 'themes'
 import type { ApiContext } from 'types'
 import { fetcher } from 'utils'
 
-// グローバルのスタイル
+// 글로벌 스타일
 const GlobalStyle = createGlobalStyle`
 html,
 body,

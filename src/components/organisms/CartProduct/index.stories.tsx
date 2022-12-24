@@ -6,40 +6,40 @@ export default {
   argTypes: {
     id: {
       control: { type: 'number' },
-      description: '商品ID',
+      description: '상품 ID',
       table: {
         type: { summary: 'number' },
       },
     },
     title: {
       control: { type: 'text' },
-      description: '商品タイトル',
+      description: '상품명',
       table: {
         type: { summary: 'string' },
       },
     },
     imageUrl: {
       control: { type: 'text' },
-      description: '商品画像URL',
+      description: '상폼 이미지 URL',
       table: {
         type: { summary: 'string' },
       },
     },
     price: {
       control: { type: 'number' },
-      description: '商品価格',
+      description: '상품 가격',
       table: {
         type: { summary: 'number' },
       },
     },
     onBuyButtonClick: {
-      description: '購入ボタンを押した時のイベントハンドラ',
+      description: '구입 버튼을 클릭했을 때의 이벤트 핸들러',
       table: {
         type: { summary: 'function' },
       },
     },
     onRemoveButtonClick: {
-      description: '削除ボタンを押した時のイベントハンドラ',
+      description: '삭제 버튼을 클릭했을 때의 이벤트 핸들러',
       table: {
         type: { summary: 'function' },
       },
