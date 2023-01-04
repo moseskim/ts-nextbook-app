@@ -67,7 +67,7 @@ const HomePage: NextPage<HomePageProps> = ({
                 variant="mediumLarge"
                 color="white"
               >
-                이쪽
+                다음
               </Text>
               의 Github에서 다운로드 할 수 있습니다.
             </Text>

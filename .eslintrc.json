@@ -14,7 +14,7 @@
     "react/react-in-jsx-scope": "off",
     "import/order": [2, { "alphabetize": { "order": "asc" } }],
     "prettier/prettier": [
-      "error",
+      "off",
       {
         "trailingComma": "all",
         "endOfLine": "lf",
