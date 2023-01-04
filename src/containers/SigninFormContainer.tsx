@@ -1,6 +1,7 @@
 import SigninForm from 'components/organisms/SigninForm'
 import { useAuthContext } from 'contexts/AuthContext'
 import { useGlobalSpinnerActionsContext } from 'contexts/GlobalSpinnerContext'
+import { setTimeout } from 'timers'
 
 interface SigninFormContainerProps {
   /**
@@ -18,7 +19,6 @@ const SigninFormContainer = ({ onSignin }: SigninFormContainerProps) => {
   // 로그인 버튼을 눌렀을 때의 이벤트 핸들러
   const handleSignin = async (username: string, password: string) => {
     try {
-      // 로딩 스피너를 표시한다
       setGlobalSpinner(true)
       await signin(username, password)
       onSignin && onSignin()

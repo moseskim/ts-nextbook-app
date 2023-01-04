@@ -95,7 +95,7 @@ const ProductCard = ({
               margin={0}
               padding={{ base: 1, md: 2 }}
             >
-              {price}円
+              {price}원
             </Text>
           </Box>
         </ProductCardInfo>
@@ -130,7 +130,7 @@ const ProductCard = ({
             {title}
           </Text>
           <Text as="span" variant="medium">
-            {price}円
+            {price}원
           </Text>
         </Box>
       )}

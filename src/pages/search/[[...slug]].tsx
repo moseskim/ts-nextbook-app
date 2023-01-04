@@ -86,7 +86,7 @@ const SearchPage: NextPage = () => {
                 </Link>
               </BreadcrumbItem>
             ))}
-            {slug.length == 0 && <BreadcrumbItem>すべて</BreadcrumbItem>}
+            {slug.length == 0 && <BreadcrumbItem>모두</BreadcrumbItem>}
             {slug.length > 0 && (
               <BreadcrumbItem>
                 {categoryNameDict[slug[slug.length - 1]] ?? 'Unknown'}

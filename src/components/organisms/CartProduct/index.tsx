@@ -86,7 +86,7 @@ const CartProduct = ({
                 {title}
               </Text>
               <Text margin={0} as="p">
-                {price}円
+                {price}원
               </Text>
             </Box>
             <Flex marginTop={{ base: 2, md: 0 }}>

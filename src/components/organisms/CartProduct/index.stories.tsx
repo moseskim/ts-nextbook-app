@@ -55,6 +55,6 @@ export const NiceShoes = Template.bind({})
 NiceShoes.args = {
   id: 1,
   imageUrl: '/images/sample/1.jpg',
-  title: 'ナイスシューズ',
-  price: 3200,
+  title: '멋진 신발',
+  price: 32000,
 }
