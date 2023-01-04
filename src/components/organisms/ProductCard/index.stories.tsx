@@ -55,7 +55,7 @@ Listing.args = {
   variant: 'listing',
   title: '멋진 신발',
   imageUrl: '/images/sample/1.jpg',
-  price: 2000,
+  price: 20000,
 }
 
 // Small 카드
@@ -64,7 +64,7 @@ Small.args = {
   variant: 'small',
   title: '멋진 신발',
   imageUrl: '/images/sample/1.jpg',
-  price: 2000,
+  price: 20000,
 }
 
 // Detail 카드
@@ -73,5 +73,5 @@ Detail.args = {
   variant: 'detail',
   title: '멋진 신발',
   imageUrl: '/images/sample/1.jpg',
-  price: 2000,
+  price: 20000,
 }

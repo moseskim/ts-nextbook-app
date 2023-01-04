@@ -76,9 +76,9 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
         </Box>
         <Box marginBottom={1}>
           <Text as="label" variant="medium">
-            タイトル
+            제목
           </Text>
-          {/* 상품 타이틀 입력 */}
+          {/* 상품 제목 입력 */}
           <Input
             {...register('title', { required: true })}
             name="title"
@@ -132,7 +132,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
                 options={[
                   { value: 'shoes', label: '슈즈' },
                   { value: 'clothes', label: '의류' },
-                  { value: 'book', label: '' },
+                  { value: 'book', label: '책' },
                 ]}
                 hasError={!!error}
                 value={value}
@@ -185,7 +185,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
             {...register('price', { required: true })}
             name="price"
             type="number"
-            placeholder="100"
+            placeholder="1000"
             hasError={!!errors.price}
           />
           {errors.price && (

@@ -23,7 +23,7 @@ export const WithContextProvider = () => {
     return (
       <>
         <GlobalSpinner />
-        <Button onClick={handleClick}>스피터 표시</Button>
+        <Button onClick={handleClick}>스피너 표시</Button>
       </>
     )
   }

@@ -50,7 +50,7 @@ const HomePage: NextPage<HomePageProps> = ({
         >
           <Box width="100%">
             <Text as="h1" marginBottom={0} color="white" variant="extraLarge">
-              Gihyo C2C에서 
+              Wiki C2C에서 
             </Text>
             <Text as="h1" marginTop={0} color="white" variant="extraLarge">
               마음에 드는 아이템을 찾자
@@ -58,7 +58,7 @@ const HomePage: NextPage<HomePageProps> = ({
           </Box>
           <Box width="100%">
             <Text as="p" color="white" variant="mediumLarge">
-              Gihyo C2C는 실전적인 Next.js 애플리케이션 개발에서 사용되는 데모 애플리케이션입니다. 목 서버를 사용하고 있습니다. 소스 코드는 
+              Wiki C2C는 실전적인 Next.js 애플리케이션 개발에서 사용되는 데모 애플리케이션입니다. 목 서버를 사용하고 있습니다. 소스 코드는 
               <Text
                 as="a"
                 style={{ textDecoration: 'underline' }}
