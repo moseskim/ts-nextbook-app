@@ -32,7 +32,7 @@ const product: Product = {
   description: '',
   imageUrl: '/images/sample/1.jpg',
   blurDataUrl: '',
-  price: 1000,
+  price: 10000,
   condition: 'used',
   owner: authUser,
 }

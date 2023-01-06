@@ -59,7 +59,7 @@ export function toPropValue<T>(
         responsiveKey === 'lg' ||
         responsiveKey === 'xl'
       ) {
-        // 미비어 쿼리의 스타일
+        // 미디어 쿼리의 스타일
         const breakpoint = BREAKPOINTS[responsiveKey]
         const style = `${propKey}: ${toThemeValueIfNeeded(
           propKey,
