@@ -32,13 +32,13 @@ export const Login = () => {
         description: '',
         imageUrl: '/images/sample/1.jpg',
         blurDataUrl: '',
-        price: 1000,
+        price: 10000,
         condition: 'used',
         owner: authUser,
       })
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-
+    
     return <Header />
   }
 

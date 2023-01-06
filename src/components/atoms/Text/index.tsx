@@ -10,7 +10,7 @@ import {
   LineHeight,
 } from 'utils/styles'
 
-// テキストバリアント
+// 텍스트 변형
 export type TextVariant =
   | 'extraSmall'
   | 'small'
